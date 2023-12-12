@@ -1,29 +1,31 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";import { useFonts } from "expo-font";
-import { SplashScreen, Stack } from "expo-router";
-import { useEffect } from "react";
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import FontAwesome from '@expo/vector-icons/FontAwesome'
+import { useFonts } from 'expo-font'
+import { SplashScreen, Stack } from 'expo-router'
+import { useEffect } from 'react'
+import { StatusBar } from 'expo-status-bar'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+// eslint-disable-next-line camelcase
 export const unstable_settings = {
-  initialRouteName: "/(tabs)/index",
-};
-SplashScreen.preventAutoHideAsync();
+  initialRouteName: '/(tabs)/index',
+}
+SplashScreen.preventAutoHideAsync()
 export default function RootLayout() {
-  const [loaded, error] = useFonts({ ...FontAwesome.font });
+  const [loaded, error] = useFonts({ ...FontAwesome.font })
 
   useEffect(() => {
-    if (error) throw error;
-  }, [error]);
+    if (error) throw error
+  }, [error])
 
   useEffect(() => {
     if (loaded) {
-      SplashScreen.hideAsync();
+      SplashScreen.hideAsync()
     }
-  }, [loaded]);
+  }, [loaded])
 
   if (!loaded) {
-    return null;
+    return null
   }
-  return <RootLayoutNav />;
+  return <RootLayoutNav />
 }
 
 function RootLayoutNav() {
@@ -31,10 +33,13 @@ function RootLayoutNav() {
     <>
       <SafeAreaProvider>
         <Stack>
-          <Stack.Screen name="(MenuInferior)" options={{headerShown:false}} />
+          <Stack.Screen
+            name="(MenuInferior)"
+            options={{ headerShown: false }}
+          />
         </Stack>
         <StatusBar style="auto" animated />
       </SafeAreaProvider>
     </>
-  );
+  )
 }

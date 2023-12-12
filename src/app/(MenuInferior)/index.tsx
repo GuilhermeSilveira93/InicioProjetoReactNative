@@ -1,8 +1,6 @@
-import { Text } from "react-native"
+import { Text } from 'react-native'
 
 export const Home = () => {
-  return (
-    <Text>Olá Mundo</Text>
-  )
+  return <Text>Olá Mundo</Text>
 }
 export default Home
