@@ -1,4 +1,4 @@
-package com.anonymous.GenericoExpo;
+package com.genericoexpo;
 
 import android.os.Build;
 import android.os.Bundle;

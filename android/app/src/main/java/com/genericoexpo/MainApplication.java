@@ -1,4 +1,4 @@
-package com.anonymous.GenericoExpo;
+package com.genericoexpo;
 
 import android.app.Application;
 import android.content.res.Configuration;
