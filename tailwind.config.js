@@ -3,17 +3,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // eslint-disable-next-line prettier/prettier
         dark: {
-          1: 'rgb(0, 255, 159)',
-          2: '#465DFF',
-          3: '#293541',
+          primaria: 'rgb(0, 255, 159)',
+          secundaria: '#465DFF',
+          fundo: '#293541',
+          branco: '#fff',
+          text: '#fff',
         },
-        // eslint-disable-next-line prettier/prettier
         light: {
-          1: 'rgb(0, 255, 159)',
-          2: '#465DFF',
-          3: '#293541',
+          primaria: '#465DFF',
+          secundaria: 'rgb(0, 255, 159)',
+          fundo: '#fff',
+          branco: '#fff',
+          text: '#000',
         },
       },
     },
