@@ -4,7 +4,6 @@ import { SplashScreen, Stack } from 'expo-router'
 import { useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-// eslint-disable-next-line camelcase
 export const unstable_settings = {
   initialRouteName: '/(tabs)/index',
 }
