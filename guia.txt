@@ -71,3 +71,8 @@ alterar versão parar 33
 /////// arrumar o NativeBase
 node_modules/native-base/src/core/NativeBaseProvider.tsx
 Delete <SSRProvider></SSRProvider>
+
+/////// arrumar o Bluetooth Classic
+node_modules\react-native-bluetooth-classic\android\build.gradle
+compileSdkVersion de 29 para 33
+targetSdkVersion de 29 para 33
