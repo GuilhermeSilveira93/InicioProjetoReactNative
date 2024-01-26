@@ -60,13 +60,14 @@ keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg
 ...\android\app\build\outputs\bundle\release
 
 
-
-
-
-// arrumar o serialPort
+/////// arrumar o serialPort
 em android/src/main/java/com/bastengao/usbserialport/UsbSerialportForAndroidModule.java
 alterar a linha 99 e colocar o seguinte:
 PendingIntent usbPermissionIntent = PendingIntent.getBroadcast(getCurrentActivity(), 0, new Intent(INTENT_ACTION_GRANT_USB), PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
 
 em android/build.gradle
 alterar versão parar 33
+
+/////// arrumar o NativeBase
+node_modules/native-base/src/core/NativeBaseProvider.tsx
+Delete <SSRProvider></SSRProvider>

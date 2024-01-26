@@ -7,6 +7,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 export const unstable_settings = {
   initialRouteName: '/(tabs)/index',
 }
+import { NativeBaseProvider } from "native-base";
 SplashScreen.preventAutoHideAsync()
 export default function RootLayout() {
   const [loaded, error] = useFonts({ ...FontAwesome.font })
@@ -31,6 +32,7 @@ function RootLayoutNav() {
   return (
     <>
       <SafeAreaProvider>
+        <NativeBaseProvider>
         <Stack>
           <Stack.Screen
             name="(MenuInferior)"
@@ -38,6 +40,7 @@ function RootLayoutNav() {
           />
         </Stack>
         <StatusBar style="auto" animated />
+        </NativeBaseProvider>
       </SafeAreaProvider>
     </>
   )
