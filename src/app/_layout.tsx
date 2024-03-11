@@ -1,17 +1,18 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome'
+import React, { useEffect } from 'react'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import './global.css'
+
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
-import { useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar'
-import { SafeAreaProvider } from 'react-native-safe-area-context'
-export const unstable_settings = {
-  initialRouteName: '/(tabs)/index',
-}
-import { NativeBaseProvider } from "native-base";
+import { NativeBaseProvider } from 'native-base'
+
 SplashScreen.preventAutoHideAsync()
 export default function RootLayout() {
-  const [loaded, error] = useFonts({ ...FontAwesome.font })
-
+  const [loaded, error] = useFonts({
+    'Univia-PRO': require('./../../assets/fonts/UniviaPro-Regular.ttf'),
+    'Univia-BOLD': require('./../../assets/fonts/UniviaPro-Bold.ttf'),
+  })
   useEffect(() => {
     if (error) throw error
   }, [error])
@@ -27,21 +28,22 @@ export default function RootLayout() {
   }
   return <RootLayoutNav />
 }
-
 function RootLayoutNav() {
   return (
     <>
-      <SafeAreaProvider>
-        <NativeBaseProvider>
-        <Stack>
-          <Stack.Screen
-            name="(MenuInferior)"
-            options={{ headerShown: false }}
-          />
-        </Stack>
-        <StatusBar style="auto" animated />
-        </NativeBaseProvider>
-      </SafeAreaProvider>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+      <StatusBar hidden />
+          <NativeBaseProvider>
+            <Stack
+              initialRouteName="index"
+              screenOptions={{ headerShown: false }}
+            >
+              <Stack.Screen name="index" />
+              <Stack.Screen name="Checklist" />
+              <Stack.Screen name="(drawerOperador)" />
+            </Stack>
+          </NativeBaseProvider>
+      </GestureHandlerRootView>
     </>
   )
 }

@@ -26,8 +26,9 @@
       "package": "com.anonymous.GenericoExpo"
     },
     "web": {
-      "favicon": "./assets/favicon.png",
-      "bundler": "metro"
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
     },
     "experiments": {
       "typedRoutes": true,
