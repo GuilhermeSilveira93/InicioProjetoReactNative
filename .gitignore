@@ -158,3 +158,5 @@ yarn-error.*
 
 # local env files
 #.env*.local
+#android
+android
