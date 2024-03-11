@@ -6,6 +6,7 @@ import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 import { NativeBaseProvider } from 'native-base'
+import { SafeAreaProvider, useSafeAreaInsets  } from 'react-native-safe-area-context'
 
 SplashScreen.preventAutoHideAsync()
 export default function RootLayout() {
@@ -29,21 +30,18 @@ export default function RootLayout() {
   return <RootLayoutNav />
 }
 function RootLayoutNav() {
+  const insets = useSafeAreaInsets();
   return (
-    <>
+    <SafeAreaProvider style={{ paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight:insets.right }}>
       <GestureHandlerRootView style={{ flex: 1 }}>
-      <StatusBar hidden />
+      <StatusBar translucent />
           <NativeBaseProvider>
             <Stack
-              initialRouteName="index"
-              screenOptions={{ headerShown: false }}
+            screenOptions={{headerShown: false}}
             >
-              <Stack.Screen name="index" />
-              <Stack.Screen name="Checklist" />
-              <Stack.Screen name="(drawerOperador)" />
             </Stack>
           </NativeBaseProvider>
       </GestureHandlerRootView>
-    </>
+      </SafeAreaProvider>
   )
 }
