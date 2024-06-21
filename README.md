@@ -31,15 +31,6 @@
     <li>Entre na pasta do aplicativo
       <ol>
         <li>Rode os comandos abaixo para gerar os arquivo de keystore (chave). Uma linha de comando de cada vez</li>
-        <li>keytool -genkeypair -v -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048
-          -validity 10000</li>
-        <li>keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity
-          10000</li>
-      </ol>
-    </li>
-    <li>Entre na pasta do aplicativo
-      <ol>
-        <li>Rode os comandos abaixo para gerar os arquivo de keystore (chave). Uma linha de comando de cada vez</li>
         <li>
           keytool -genkeypair -v -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048
           -validity 10000
@@ -64,10 +55,11 @@
         <li>Na pasta android do seu projeto ( {seuApp}\android ) no arquivo gradle.properties insira os comandos a
           seguir:
           <ol>
-            <li>MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore</li>
-            <li>MYAPP_UPLOAD_KEY_ALIAS=my-key-alias</li>
-            <li>MYAPP_UPLOAD_STORE_PASSWORD=***Senha que vc digitou antes***</li>
-            <li>MYAPP_UPLOAD_KEY_PASSWORD=***Senha que vc digitou antes***</li>
+            <li><p>MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore</p>
+            <p>MYAPP_UPLOAD_KEY_ALIAS=my-key-alias</p>
+            <p>MYAPP_UPLOAD_STORE_PASSWORD=***Senha que vc digitou antes***</p>
+            <p>MYAPP_UPLOAD_KEY_PASSWORD=***Senha que vc digitou antes***</p>
+            </li>
           </ol>
         </li>
       </ol>
