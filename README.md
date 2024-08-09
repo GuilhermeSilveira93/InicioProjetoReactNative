@@ -81,20 +81,20 @@
           </code>
           </li>
           <li>
-            Caso ainda nunca tenha feito um build, vamos lá:
+            <p>Caso ainda nunca tenha feito um build, vamos lá:</p>
             <ol>
               <li>
-                Adicone o script abaixo no seu package.json pois é um comando que você pode acabar usando mais vezes:
+                <p>Adicone o script abaixo no seu package.json pois é um comando que você pode acabar usando mais vezes:</p>
                 <code>
                     "scripts": {
                     "clean": "npx expo prebuild --clean"
                     },
                 </code>
-                Rode o comando npm run clean.
-                Quando rodar, caso não tenha package no eu app.json, esse comando irá te perguntar qual o nome que você quer atribuir.
-                Muita atenção neste ponto, pois os smartphones e a playstore utilizam esse nome, como se fosse o endereço do seu app.
-                1x publicado na playStore, o endereço não pode mudar!
-                Para ter um entendimento prático, é isso que a loja usa para identificar um aplicativo que já está instalado, para saber se tem que instalar do zero, ou fazer uma atualização.
+                <p>Rode o comando npm run clean.</p>
+                <p>Quando rodar, caso não tenha package no eu app.json, esse comando irá te perguntar qual o nome que você quer atribuir.</p>
+                <p>Muita atenção neste ponto, pois os smartphones e a playstore utilizam esse nome, como se fosse o endereço do seu app.</p>
+                <p>1x publicado na playStore, o endereço não pode mudar!</p>
+                <p>Para ter um entendimento prático, é isso que a loja usa para identificar um aplicativo que já está instalado, para saber se tem que instalar do zero, ou fazer uma atualização.</p>
               </li>
               <li>
                 Agora coloque este nome com.user.projetonome (é só um exemplo heim!) no seu projeto do fireBase e clique em registar:
