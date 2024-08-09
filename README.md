@@ -48,7 +48,6 @@
         </li>
     </ol>
   <li>
-    <ol>
       <li>
         Com as dependencias instaladas, vá até seu app.json e adicione "@react-native-firebase/app" no array de plugins:
         <code>
@@ -57,7 +56,6 @@
           ]
         </code>
       </li>
-    </ol>
   </li>
 </ol>
 <hr>
