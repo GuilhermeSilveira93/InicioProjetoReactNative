@@ -27,19 +27,18 @@
 <p><a href='https://github.com/mrousavy/react-native-mmkv' target='_blank'>Documentação aqui</a></p>
 <hr>
 <h1>Configurando Push Notifications</h1>
-  <ol>
-    <li>As notificações do Expo, trabalham com o expo intermediando as rquisições, essas por sua vez, são transmitidas via Firebase(android) ou APNS(apple)
+<ol>
+    <li>As notificações do Expo, trabalham com o expo intermediando as rquisições, essas por sua vez, são transmitidas via Firebase(android) ou APNS(apple):
     <img src="ReadMe//sending-notification.png" alt="Italian Trulli">
-    <li>
-    <li>Vamos instalar as dependencias necessarias do expo:
-      <ol>
+    <ol>
+      <li>Por conta disso, vamos instalar as seguintes dependencias:
         <code>
         npx expo install expo-notifications expo-device expo-constants
         </code>
-      </ol>
+      <li>
+    </ol>
     <li>
-  </ol>
-
+</ol>
 <hr>
 <h2>Gerando Build sem Expo.</h2>
 <ol>
