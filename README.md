@@ -29,7 +29,7 @@
 <h1>Configurando Push Notifications</h1>
 <ol>
     <li>As notificações do Expo, trabalham com o expo intermediando as rquisições, essas por sua vez, são transmitidas via Firebase (android) ou APNS(apple):
-      <img src="ReadMe//sending-notification.png" alt="Italian Trulli">
+      <img src="ReadMe//sending-notification.png" alt="Italian Trulli" />
     </li>
     <li>
         <li>Por conta disso, vamos instalar as seguintes dependencias:
