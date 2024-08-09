@@ -33,9 +33,30 @@
     </li>
     <ol>
         <li>Por conta disso, vamos instalar as seguintes dependencias:
-          <code>
-          npx expo install expo-notifications expo-device expo-constants
-          </code>
+          <ol>
+            <li>
+              <code>
+                npx expo install expo-notifications expo-device expo-constants
+              </code>
+            </li>
+            <li>
+              <code>
+                npx expo install @react-native-firebase/app
+              </code>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <ol>
+            <li>
+              Com as dependencias instaladas, vá até seu app.json e adicione "@react-native-firebase/app" no array de plugins:
+              <code>
+                "plugins": [
+                "@react-native-firebase/app"
+                ]
+              </code>
+            </li>
+          </ol>
         </li>
     </ol>
 </ol>
