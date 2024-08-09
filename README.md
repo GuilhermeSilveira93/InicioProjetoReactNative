@@ -158,19 +158,16 @@
     <h3>Crie o hook usePushNotifications.ts</h3>
     <p>
       <code>
-      ```
         import { useState, useEffect, useRef } from 'react'
         import { Platform } from 'react-native'
         import { registerForPushNotificationsAsync } from '@/libs/notifications/registerForPushNotificationsAsync'
         import Constants from 'expo-constants'
         import * as Device from 'expo-device'
         import * as Notifications from 'expo-notifications'
-
         export interface PushNotificationState {
           notification?: Notifications.Notification
           expoPushToken?: Notifications.ExpoPushToken
         }
-
         const usePushNotifications = (): PushNotificationState => {
           Notifications.setNotificationHandler({
             handleNotification: async () => ({
@@ -187,7 +184,6 @@
           >()
           const notificationListener = useRef<Notifications.Subscription>()
           const responseListener = useRef<Notifications.Subscription>()
-
           useEffect(() => {
             registerForPushNotificationsAsync({ Constants, Device, Platform }).then(
               (token) => setExpoPushToken(token),
@@ -211,7 +207,6 @@
                   console.log(id.id)
                 })
               })
-
             return () => {
               notificationListener.current &&
                 Notifications.removeNotificationSubscription(
@@ -227,7 +222,6 @@
           }
         }
         export default usePushNotifications
-        ```
       </code>
     </p>
   </li>
