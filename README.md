@@ -30,6 +30,7 @@
 <ol>
     <li>As notificações do Expo, trabalham com o expo intermediando as rquisições, essas por sua vez, são transmitidas via Firebase(android) ou APNS(apple):
     <img src="ReadMe//sending-notification.png" alt="Italian Trulli">
+    <li>
     <ol>
       <li>Por conta disso, vamos instalar as seguintes dependencias:
         <code>
@@ -37,7 +38,6 @@
         </code>
       <li>
     </ol>
-    <li>
 </ol>
 <hr>
 <h2>Gerando Build sem Expo.</h2>
