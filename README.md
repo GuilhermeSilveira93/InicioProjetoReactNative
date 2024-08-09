@@ -25,7 +25,7 @@
 <h1>Configurando Push Notifications</h1>
 <ol>
     <li>As notificações do Expo, trabalham com o expo intermediando as rquisições, essas por sua vez, são transmitidas via Firebase (android) ou APNS(apple):
-      <img src="ReadMe//sending-notification.png" alt="Italian Trulli" />
+      <img src="ReadMe/sending-notification.png" alt="" />
     </li>
     <ol>
         <li>Por conta disso, vamos instalar as seguintes dependencias:
@@ -52,12 +52,60 @@
     </code>
   </li>
   <li>
-    Com as dependencias instaladas, vá até seu app.json e adicione "@react-native-firebase/app" no array de plugins:
-    <code>
-      "plugins": [
-      "@react-native-firebase/app"
-      ]
-    </code>
+    Agora, iremos criar um projeto no FireBase (caso ainda não tenha):
+    <ol>
+      <li>
+        Faça login no site do <a href="https://firebase.google.com/" target="_blank">FireBase</a> e clique em "Criar Projeto"
+        <img src="ReadMe/criarProjeto.png">
+      </li>
+      <li>
+        De um nome para o projeto e clique "Continuar".
+        Na próxima tela, onde está escrito "Ativar o Google Analytics neste projeto" é da sua escolha deixar ou não.
+        <br>
+        Crie o Projeto.
+      </li>
+      <li>
+        Clique em Android em "adicione ao projeto:
+        <img src="ReadMe/addAoProjeto.png">
+        <ol>
+          <li>
+          Nesta proxima tela, você precisará colocar em "Nome do Pacote do Android" o mesmo nome do seu package que está no seu app.json:
+          <code>
+            "expo":{
+              "android": {
+                "package": "nomedoseupackage"
+              }
+            }
+          </code>
+          </li>
+          <li>
+            Caso ainda nunca tenha feito um build, vamos lá:
+            <ol>
+              <li>
+                Adicone o script abaixo no seu package.json pois é um comando que você pode acabar usando mais vezes:
+                <code>
+                    "scripts": {
+                    "clean": "npx expo prebuild --clean"
+                    },
+                </code>
+                Rode o comando npm run clean.
+                Quando rodar, caso não tenha package no eu app.json, esse comando irá te perguntar qual o nome que você quer atribuir.
+                Muita atenção neste ponto, pois os smartphones e a playstore utilizam esse nome, como se fosse o endereço do seu app.
+                1x publicado na playStore, o endereço não pode mudar!
+                Para ter um entendimento prático, é isso que a loja usa para identificar um aplicativo que já está instalado, para saber se tem que instalar do zero, ou fazer uma atualização.
+              </li>
+              <li>
+                Agora coloque este nome com.user.projetonome (é só um exemplo heim!) no seu projeto do fireBase e clique em registar:
+                <img src="ReadMe/RegisterApp.png">
+              </li>
+              <li>
+                Faça o download do google-services.json e coloque na raiz do seu projeto.
+              </li>
+            </ol> 
+          </li>
+        </ol>
+      </li>
+    </ol>
   </li>
 </ol>
 <hr>
