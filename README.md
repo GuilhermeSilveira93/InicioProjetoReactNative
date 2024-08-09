@@ -66,7 +66,9 @@
       </li>
       <li>
         Clique em Android em "adicione ao projeto:
+        <br>
         <img src="ReadMe/addAoProjeto.png">
+        <br>
         <ol>
           <li>
           Nesta proxima tela, você precisará colocar em "Nome do Pacote do Android" o mesmo nome do seu package que está no seu app.json:
