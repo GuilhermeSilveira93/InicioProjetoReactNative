@@ -153,6 +153,84 @@
     <p>Faça login com o comando <code>eas login</code></p>
     <p>rode o build para a eas (não precisa esperar, aperte CTRL+C para sair quando o processo iniciar) <code>eas build</code></p>
   </li>
+  <li>
+    <h2>Hora de testar</h2>
+    <h3>Crie o hook usePushNotifications.ts</h3>
+    <p>
+      <code>
+      ```
+        import { useState, useEffect, useRef } from 'react'
+        import { Platform } from 'react-native'
+        import { registerForPushNotificationsAsync } from '@/libs/notifications/registerForPushNotificationsAsync'
+        import Constants from 'expo-constants'
+        import * as Device from 'expo-device'
+        import * as Notifications from 'expo-notifications'
+
+        export interface PushNotificationState {
+          notification?: Notifications.Notification
+          expoPushToken?: Notifications.ExpoPushToken
+        }
+
+        const usePushNotifications = (): PushNotificationState => {
+          Notifications.setNotificationHandler({
+            handleNotification: async () => ({
+              shouldShowAlert: true,
+              shouldPlaySound: true,
+              shouldSetBadge: true,
+            }),
+          })
+          const [expoPushToken, setExpoPushToken] = useState<
+            Notifications.ExpoPushToken | undefined
+          >()
+          const [notification, setNotification] = useState<
+            Notifications.Notification | undefined
+          >()
+          const notificationListener = useRef<Notifications.Subscription>()
+          const responseListener = useRef<Notifications.Subscription>()
+
+          useEffect(() => {
+            registerForPushNotificationsAsync({ Constants, Device, Platform }).then(
+              (token) => setExpoPushToken(token),
+            )
+            notificationListener.current =
+              Notifications.addNotificationReceivedListener((notification) => {
+                notification.request.content.data = { ID: 'TESTE' }
+                notification.request.content.sound = 'custom'
+                setNotification(notification)
+              })
+            responseListener.current =
+              Notifications.addNotificationResponseReceivedListener((response) => {
+                const json: {
+                  ids: {
+                    id: string
+                  }[]
+                } = JSON.parse(
+                  response.notification.request.trigger.remoteMessage.data.body,
+                )
+                json.ids.forEach((id) => {
+                  console.log(id.id)
+                })
+              })
+
+            return () => {
+              notificationListener.current &&
+                Notifications.removeNotificationSubscription(
+                  notificationListener.current,
+                )
+              responseListener.current &&
+                Notifications.removeNotificationSubscription(responseListener.current)
+            }
+          }, [])
+          return {
+            expoPushToken,
+            notification,
+          }
+        }
+        export default usePushNotifications
+        ```
+      </code>
+    </p>
+  </li>
 </ol>
 <hr>
 <h2>Gerando Build sem Expo.</h2>
