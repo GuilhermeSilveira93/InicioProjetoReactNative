@@ -30,13 +30,13 @@
 <ol>
     <li>As notificações do Expo, trabalham com o expo intermediando as rquisições, essas por sua vez, são transmitidas via Firebase (android) ou APNS(apple):
       <img src="ReadMe//sending-notification.png" alt="Italian Trulli">
-    <li>
+    </li>
     <li>
         <li>Por conta disso, vamos instalar as seguintes dependencias:
           <code>
           npx expo install expo-notifications expo-device expo-constants
           </code>
-        <li>
+        </li>
     </li>
 </ol>
 <hr>
