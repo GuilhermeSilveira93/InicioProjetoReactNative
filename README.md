@@ -141,7 +141,7 @@
       <li>
         <p>Agora, no menu esquerdo do Expo, procure pela aba Credentials</p>
         <p>Clique no projeto que irá aparecer nesta tela.</p>
-        <p>Decendo a tela, irá encontrar o campo - FCM V1 service account key - agora suba o arquivo que você salvou no seu pc, do fireBase.</p>
+        <p>Descendo a tela, irá encontrar o campo - FCM V1 service account key - agora suba o arquivo que você salvou no seu pc, do fireBase.</p>
       </li>
       <li>
         <p>Rode o comando Clean <code>npm run clean</code></p>
