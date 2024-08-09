@@ -3,9 +3,9 @@ import { useColorScheme } from 'react-native';
 import { Input, Icon } from 'native-base'
 import { colors } from '@/ui/colors';
 type CustomInputProps<T = never, R = never> = {
-  control: Control<T extends FieldValues ? FieldValues : FieldErrors>
+  control: Control<T extends FieldValues>
   nameInput: keyof R
-  errors: FieldErrors<R extends FieldValues ? FieldValues : FieldErrors>
+  errors: FieldErrors<R extends FieldValues>
   placeholderInput?: string
   IconLeft?: React.ReactElement
   IconRight?: React.ReactElement
