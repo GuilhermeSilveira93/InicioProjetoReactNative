@@ -225,6 +225,10 @@
       </code>
     </p>
   </li>
+  <li>
+  <p>faça um console.log de expoPushToken para pegar o token</p>
+  <p>Teste no Notifications Push Tool do expo: <a href="https://expo.dev/notifications">Tool</a></p>
+  </li>
 </ol>
 <hr>
 <h2>Gerando Build sem Expo.</h2>
