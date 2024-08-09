@@ -46,20 +46,20 @@
             </li>
           </ol>
         </li>
-        <li>
-          <ol>
-            <li>
-              Com as dependencias instaladas, vá até seu app.json e adicione "@react-native-firebase/app" no array de plugins:
-              <code>
-                "plugins": [
-                "@react-native-firebase/app"
-                ]
-              </code>
-            </li>
-          </ol>
-        </li>
     </ol>
 </ol>
+<li>
+  <ol>
+    <li>
+      Com as dependencias instaladas, vá até seu app.json e adicione "@react-native-firebase/app" no array de plugins:
+      <code>
+        "plugins": [
+        "@react-native-firebase/app"
+        ]
+      </code>
+    </li>
+  </ol>
+</li>
 <hr>
 <h2>Gerando Build sem Expo.</h2>
 <ol>
