@@ -97,17 +97,62 @@
                 <p>Para ter um entendimento prático, é isso que a loja usa para identificar um aplicativo que já está instalado, para saber se tem que instalar do zero, ou fazer uma atualização.</p>
               </li>
               <li>
-                Agora coloque este nome com.user.projetonome (é só um exemplo heim!) no seu projeto do fireBase e clique em registar:
+                <p>Agora coloque este nome com.user.projetonome (é só um exemplo heim!) no seu projeto do fireBase e clique em registar:</p>
                 <img src="ReadMe/RegisterApp.png">
               </li>
               <li>
-                Faça o download do google-services.json e coloque na raiz do seu projeto.
+                <p>Faça o download do google-services.json e coloque na raiz do seu projeto.</p>
+                <p>Pode ir clicando em próximo até voltar para o console.</p>
               </li>
             </ol> 
           </li>
         </ol>
       </li>
     </ol>
+  </li>
+  <li>
+    <p>Vá até as configurações do projeto, clicando no menu superior esquerdo (engrenagem)</p>
+    <img src="ReadMe/configProjeto.png">
+    <p>Vá para a aba Contas de Serviço e clique em Gerar Nova chave Privada e salve o arquivo no pc.</p>
+  </li>
+  <li>
+    <p>Lembre-se do Diagrama inicial?</p>
+    <img src="ReadMe/configProjeto.png">
+    <p>Por conta de como funciona o Push Notificantions, você precisa ter uma conta no Expo.</p>
+    <a href="https://expo.dev">Site do Expo</a>
+    <ol>
+      <li>
+        <p>Com sua conta criada, crie um projeto na aba de projetos, esse projeto precisa de um nome e um slug, identifique do jeito que quiser.</p>
+      </li>
+      <li>
+        <p>No app.json adicione o seguinte:</p>
+        <code>
+        "expo":{
+          "slug": "slug do projeto expo.",
+          "extra": {
+            "eas": {
+              "projectId": "Id do projeto"
+            },
+          "owner": "nome da conta (normalmente)"
+            }
+          }
+        </code>
+        <p>se tiver alguma dúvida, basta clicar no projeto criado que vai ter em 1 unica linha, as 3 informações necessárias.</p>
+      </li>
+      <li>
+        <p>Agora, no menu esquerdo do Expo, procure pela aba Credentials</p>
+        <p>Clique no projeto que irá aparecer nesta tela.</p>
+        <p>Decendo a tela, irá encontrar o campo - FCM V1 service account key - agora suba o arquivo que você salvou no seu pc, do fireBase.</p>
+      </li>
+      <li>
+        <p>Rode o comando Clean <code>npm run clean</code></p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Agora, precisamos logar na conta da expo, pelo EAS, caso nunca tenha ouvido falar, é com a EAS que você envia seu projeto para a Expo</p>
+    <p>Faça login com o comando <code>eas login</code></p>
+    <p>rode o build para a eas (não precisa esperar, aperte CTRL+C para sair quando o processo iniciar) <code>eas build</code></p>
   </li>
 </ol>
 <hr>
