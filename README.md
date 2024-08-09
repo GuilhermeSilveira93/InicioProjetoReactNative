@@ -117,7 +117,6 @@
   </li>
   <li>
     <p>Lembre-se do Diagrama inicial?</p>
-    <img src="ReadMe/configProjeto.png">
     <p>Por conta de como funciona o Push Notificantions, você precisa ter uma conta no Expo.</p>
     <a href="https://expo.dev">Site do Expo</a>
     <ol>
