@@ -6,10 +6,6 @@
 <p>Projeto já configurado com Expo Router V3, também com drawer já instalado, <a href='https://docs.expo.dev/router/advanced/drawer/' target='_blank'>Clique Aqui.</a>.</p>
 <p>Deve ir atualizando conforme necessidade do dev.</p>
 <hr>
-<h2>NativeWind</h2>
-<p>Instalado e configurado</p>
-<p>A paleta de cores pode ser alterada no arquivo tailwind.config.js</p>
-<hr>
 <h2>React Hook Forms</h2>
 <p>Já instalado, lembre de usar a parte especifica para react native</p>
 <p>na documentação do react rook forms: <a href='https://react-hook-form.com/get-started#ReactNative' target='_blank'>Clique aqui</a></p>
@@ -48,12 +44,20 @@
         </li>
     </ol>
   <li>
-        Com as dependencias instaladas, vá até seu app.json e adicione "@react-native-firebase/app" no array de plugins:
-        <code>
-          "plugins": [
-          "@react-native-firebase/app"
-          ]
-        </code>
+    Com as dependencias instaladas, vá até seu app.json e adicione "@react-native-firebase/app" no array de plugins:
+    <code>
+      "plugins": [
+      "@react-native-firebase/app"
+      ]
+    </code>
+  </li>
+  <li>
+    Com as dependencias instaladas, vá até seu app.json e adicione "@react-native-firebase/app" no array de plugins:
+    <code>
+      "plugins": [
+      "@react-native-firebase/app"
+      ]
+    </code>
   </li>
 </ol>
 <hr>
