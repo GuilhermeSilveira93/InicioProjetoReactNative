@@ -32,13 +32,11 @@
       <img src="ReadMe//sending-notification.png" alt="Italian Trulli">
     <li>
     <li>
-      <ol>
         <li>Por conta disso, vamos instalar as seguintes dependencias:
           <code>
           npx expo install expo-notifications expo-device expo-constants
           </code>
         <li>
-      </ol>
     </li>
 </ol>
 <hr>
