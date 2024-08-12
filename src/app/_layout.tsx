@@ -1,47 +1,63 @@
-import React, { useEffect } from 'react'
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import './global.css'
+import React, { useEffect } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import './global.css';
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
+import { useFonts } from 'expo-font';
+import { SplashScreen, Stack } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { NativeBaseProvider } from 'native-base';
+import {
+  SafeAreaProvider,
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context';
 
-import { useFonts } from 'expo-font'
-import { SplashScreen, Stack } from 'expo-router'
-import { StatusBar } from 'expo-status-bar'
-import { NativeBaseProvider } from 'native-base'
-import { SafeAreaProvider, useSafeAreaInsets  } from 'react-native-safe-area-context'
-
-SplashScreen.preventAutoHideAsync()
+SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const [loaded, error] = useFonts({
     'Univia-PRO': require('./../../assets/fonts/UniviaPro-Regular.ttf'),
     'Univia-BOLD': require('./../../assets/fonts/UniviaPro-Bold.ttf'),
-  })
+  });
   useEffect(() => {
-    if (error) throw error
-  }, [error])
+    if (error) throw error;
+  }, [error]);
 
   useEffect(() => {
     if (loaded) {
-      SplashScreen.hideAsync()
+      SplashScreen.hideAsync();
     }
-  }, [loaded])
+  }, [loaded]);
 
   if (!loaded) {
-    return null
+    return null;
   }
-  return <RootLayoutNav />
+  return <RootLayoutNav />;
 }
+const queryClient = new QueryClient();
 function RootLayoutNav() {
   const insets = useSafeAreaInsets();
   return (
-    <SafeAreaProvider style={{ paddingTop: insets.top, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight:insets.right }}>
+    <SafeAreaProvider
+      style={{
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        paddingLeft: insets.left,
+        paddingRight: insets.right,
+      }}
+    >
       <GestureHandlerRootView style={{ flex: 1 }}>
-      <StatusBar translucent />
-          <NativeBaseProvider>
-            <Stack
-            screenOptions={{headerShown: false}}
-            >
-            </Stack>
-          </NativeBaseProvider>
+        <StatusBar translucent />
+        <NativeBaseProvider>
+          <QueryClientProvider client={queryClient}>
+            <Stack screenOptions={{ headerShown: false }}></Stack>
+          </QueryClientProvider>
+        </NativeBaseProvider>
       </GestureHandlerRootView>
-      </SafeAreaProvider>
-  )
+    </SafeAreaProvider>
+  );
 }
