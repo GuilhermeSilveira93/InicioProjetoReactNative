@@ -1,17 +1,9 @@
 import React, { useEffect } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import './global.css';
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { NativeBaseProvider } from 'native-base';
 import {
   SafeAreaProvider,
   useSafeAreaInsets,
@@ -38,7 +30,6 @@ export default function RootLayout() {
   }
   return <RootLayoutNav />;
 }
-const queryClient = new QueryClient();
 function RootLayoutNav() {
   const insets = useSafeAreaInsets();
   return (
@@ -52,11 +43,7 @@ function RootLayoutNav() {
     >
       <GestureHandlerRootView style={{ flex: 1 }}>
         <StatusBar translucent />
-        <NativeBaseProvider>
-          <QueryClientProvider client={queryClient}>
             <Stack screenOptions={{ headerShown: false }}></Stack>
-          </QueryClientProvider>
-        </NativeBaseProvider>
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );
