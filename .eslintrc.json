@@ -1,13 +1,4 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "settings": {
-        "react": {
-            "version": "detect"
-        }
-    },
     "extends": [
         "eslint:recommended",
         "plugin:@next/next/recommended",
@@ -33,16 +24,18 @@
         "eslint-plugin-import-helpers"
     ],
     "rules": {
+        "@typescript-eslint/no-unused-vars": "off",
+        "no-use-before-define": "off",
         "no-console": "warn",
         "react/no-unescaped-entities": "off",
         "@next/next/no-page-custom-font": "off",
         "no-unused-vars": "warn",
+        "@typescript-eslint/no-explicit-any":"off",
         "react-hooks/rules-of-hooks": "error",
         "react/prop-types": "off",
         "react-hooks/exhaustive-deps": "warn",
         "react/react-in-jsx-scope": "off",
         "prettier/prettier": 1,
-        "@typescript-eslint/no-var-requires": "off",
         "no-undef": "off",
         "import-helpers/order-imports": [
             "warn",

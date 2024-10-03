@@ -13,10 +13,8 @@
 <h2>Immer</h2>
 <p>Immer instalado, uma lib muito show para manipulação de estados.<a href='https://immerjs.github.io/immer/' target='_blank'>Clique aqui</a></p>
 <hr>
-<h2>Native Base</h2>
-<p>Acesse o caminho abaixo:</p>
-<p>node_modules\native-base\src\core\NativeBaseProvider.tsx</p>
-<p>Deletar o provider do SSR, linha 97 pois não é mais usada nas novas versões do react.</p>
+<h2>Gluestack V1</h2>
+<p>Retiramos o Native base, pois o mesmo foi "substituido" pelo Gluestack</p>
 <hr>
 <h2>MMKV</h2>
 <p>hoje é o pacote de armazenamento interno mais rapido para react.</p>
