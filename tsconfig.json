@@ -5,14 +5,30 @@
     "strict": true,
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["./*"],
-      "@assets/*": ["./assets/*"],
-      "@constants/*":["@constants/*"],
-      "@classes/*": ["./@classes/*"],
-      "@components/*":["./components/*"],
-      "@actions/*":["./@actions/*"],
-      "@utils/*":["./@utils/*"],
-      "@hooks/*":["./hooks/*"],
+      "@/*": [
+        "./*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@constants/*": [
+        "./@constants/*"
+      ],
+      "@classes/*": [
+        "./@classes/*"
+      ],
+      "@components/*": [
+        "./components/*"
+      ],
+      "@actions/*": [
+        "./@actions/*"
+      ],
+      "@utils/*": [
+        "./@utils/*"
+      ],
+      "@hooks/*": [
+        "./hooks/*"
+      ]
     }
   },
   "extends": "expo/tsconfig.base",
@@ -21,6 +37,7 @@
     "**/*.tsx",
     "src/app/_Layout.js",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
   ]
 }

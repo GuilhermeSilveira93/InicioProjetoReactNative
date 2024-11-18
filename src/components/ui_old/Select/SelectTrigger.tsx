@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react'
 import { useColorScheme } from 'react-native'
 
-import Icon from '@components/ui/Icon'
+import Icon from '@/components/ui_old/Icon'
 import styled from 'styled-components/native'
 
 import colors from '@constants/colors'

@@ -1,8 +1,8 @@
 import { ComponentProps } from 'react'
 
-import P from '@components/ui/P'
+import P from '@/components/ui_old/P'
 
-export const InputLabel = ({
+export const SelectLabel = ({
   children,
   color = '#ccc',
   ...rest

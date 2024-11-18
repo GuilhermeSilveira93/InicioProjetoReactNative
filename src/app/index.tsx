@@ -1,13 +1,14 @@
 import React from 'react'
 
-import Center from '@components/ui/Center'
-import P from '@components/ui/P'
+import Center from '@/components/ui_old/Center'
+import P from '@/components/ui_old/P'
+import { Text, View } from 'react-native'
 export const Home = () => {
   return (
-    <Center>
-      <P>Olá !</P>
-      <P>Comece seu projeto comigo !</P>
-    </Center>
+    <View>
+      <Text>Olá !</Text>
+      <Text>Comece seu projeto comigo !</Text>
+    </View>
   )
 }
 export default Home

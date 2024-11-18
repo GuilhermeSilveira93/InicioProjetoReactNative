@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import "./global.css"
 
-import './global.css'
 import MainProviders from '@/providers/MainProviders'
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'

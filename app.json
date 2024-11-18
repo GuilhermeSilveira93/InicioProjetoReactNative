@@ -11,8 +11,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "br.com.inicio.projeto"
-
-    },    
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
@@ -38,6 +37,9 @@
           "resizeMode": "contain",
           "backgroundColor": "#000"
         }
+      ],
+      [
+        "expo-font"
       ]
     ],
     "experiments": {
