@@ -3,7 +3,7 @@ import { useColorScheme } from 'react-native'
 
 import styled from 'styled-components/native'
 
-import  colors  from '@constants/colors'
+import colors from '@constants/colors'
 import { Divider as DividerGlue } from '@gluestack-ui/themed'
 
 const DividerStyled = styled(DividerGlue).attrs<{ $theme: 'dark' | 'light' }>(
@@ -15,7 +15,8 @@ const DividerStyled = styled(DividerGlue).attrs<{ $theme: 'dark' | 'light' }>(
   }),
 )``
 
-export const Divider = ({ ...rest }: ComponentProps<typeof DividerGlue>) => {
+const Divider = ({ ...rest }: ComponentProps<typeof DividerGlue>) => {
   const colorSchema = useColorScheme() ?? 'dark'
   return <DividerStyled $theme={colorSchema} {...rest} />
 }
+export default Divider

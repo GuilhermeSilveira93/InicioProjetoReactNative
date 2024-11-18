@@ -1,12 +1,12 @@
-import { CustomInput } from '@/components';
-import { Center } from '@/components/ui';
 import React from 'react'
-import {View, Text} from 'react-native';
+
+import Center from '@components/ui/Center'
+import P from '@components/ui/P'
 export const Home = () => {
   return (
     <Center>
-      <Text>Olá !</Text>
-      <Text>Comece seu projeto comigo !</Text>
+      <P>Olá !</P>
+      <P>Comece seu projeto comigo !</P>
     </Center>
   )
 }

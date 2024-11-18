@@ -1,7 +1,8 @@
 import { Bar } from './Bar'
 import { ProgressBarRoot } from './Progress'
 
-export const ProgressBar = {
+const ProgressBar = {
   ROOT: ProgressBarRoot,
   BAR: Bar,
-}
+} as const
+export default ProgressBar

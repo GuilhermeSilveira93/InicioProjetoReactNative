@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react'
 import { useColorScheme } from 'react-native'
 
-import { Icon, P } from '@components/ui'
+import Icon from '@components/ui/Icon'
 import styled from 'styled-components/native'
 
-import  colors  from '@constants/colors'
+import colors from '@constants/colors'
 import AntDesign from '@expo/vector-icons/AntDesign'
 import { SelectTrigger, SelectInput, SelectIcon } from '@gluestack-ui/themed'
 

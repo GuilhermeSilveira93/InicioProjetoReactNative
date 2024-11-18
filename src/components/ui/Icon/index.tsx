@@ -7,7 +7,7 @@ type IconProps<T = never> = {
   color: string
 } & PressableProps
 // eslint-disable-next-line prettier/prettier
-export const Icon = <T = never>({
+const Icon = <T = never>({
   icon: Icon,
   name,
   color,
@@ -20,3 +20,4 @@ export const Icon = <T = never>({
     </Pressable>
   )
 }
+export default Icon

@@ -5,9 +5,9 @@
     "strict": true,
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": ["./*"],
       "@assets/*": ["./assets/*"],
-      "@constants/*":["./@constants/*"],
+      "@constants/*":["@constants/*"],
       "@classes/*": ["./@classes/*"],
       "@components/*":["./components/*"],
       "@actions/*":["./@actions/*"],

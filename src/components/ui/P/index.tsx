@@ -3,7 +3,8 @@ import { useColorScheme } from 'react-native'
 
 import styled from 'styled-components/native'
 
-import { fontSizeEnum, colors } from '@constants/index'
+import colors from '@constants/colors'
+import fontSizeEnum from '@constants/FontSizeEnum'
 import { Text } from '@gluestack-ui/themed'
 
 export const StyledP = styled(Text).attrs<{ $theme: 'dark' | 'light' }>(
@@ -22,7 +23,7 @@ type PProps = {
   $bold?: boolean
   fontSize?: fontSizeEnum
 } & ComponentProps<typeof Text>
-export const P = ({ children, $bold, fontSize, ...rest }: PProps) => {
+const P = ({ children, $bold, fontSize, ...rest }: PProps) => {
   const colorScheme = useColorScheme() ?? 'dark'
   return (
     <StyledP $bold={$bold} $theme={colorScheme} fontSize={fontSize} {...rest}>
@@ -30,3 +31,4 @@ export const P = ({ children, $bold, fontSize, ...rest }: PProps) => {
     </StyledP>
   )
 }
+export default P

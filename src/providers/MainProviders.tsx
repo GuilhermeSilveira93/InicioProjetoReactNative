@@ -8,7 +8,7 @@ import { GluestackUIProvider } from '@gluestack-ui/themed'
 type MainProvidersProps = {
   children: React.ReactNode
 }
-export const MainProviders = ({ children }: MainProvidersProps) => {
+const MainProviders = ({ children }: MainProvidersProps) => {
   const insets = useSafeAreaInsets()
   return (
     <SafeAreaProvider
@@ -23,3 +23,4 @@ export const MainProviders = ({ children }: MainProvidersProps) => {
     </SafeAreaProvider>
   )
 }
+export default MainProviders

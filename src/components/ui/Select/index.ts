@@ -4,10 +4,11 @@ import { SelectContent } from './SelectContent'
 import { SelectLabel } from './SelectLabel'
 import { SelectTriggerCustom } from './SelectTrigger'
 
-export const Select = {
+const Select = {
   ROOT: SelectROOT,
   TRIGGER: SelectTriggerCustom,
   CONTENT: SelectContent,
   LABEL: SelectLabel,
   ERROR: InputError,
 }
+export default Select

@@ -2,8 +2,9 @@ import { ComponentProps } from 'react'
 import { useColorScheme, Dimensions } from 'react-native'
 
 import styled from 'styled-components/native'
-import  colors  from '@constants/colors'
+
 import { variant } from '@/@constants'
+import colors from '@constants/colors'
 import { Button as ButtonGlue } from '@gluestack-ui/themed'
 const { height } = Dimensions.get('screen')
 

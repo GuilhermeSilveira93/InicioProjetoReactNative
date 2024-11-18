@@ -5,11 +5,12 @@ import { InputGroup } from './InputGroup'
 import { InputIcon } from './InputIcon'
 import { InputLabel } from './InputLabel'
 
-export const Input = {
+const Input = {
   ROOT: InputRoot,
   GROUP: InputGroup,
   FIELD: InputField,
   ICON: InputIcon,
   LABEL: InputLabel,
   ERROR: InputError,
-}
+} as const
+export default Input

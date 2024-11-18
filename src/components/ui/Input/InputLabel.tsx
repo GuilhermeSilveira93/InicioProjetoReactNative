@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react'
 
-import { P } from '@components/ui'
+import P from '@components/ui/P'
 
 export const InputLabel = ({
   children,

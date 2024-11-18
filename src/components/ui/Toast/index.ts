@@ -3,9 +3,10 @@ import { ToastClose } from './ToastClose'
 import { ToastDescription } from './ToastDescription'
 import { ToastTitle } from './ToastTitle'
 
-export const Toast = {
+const Toast = {
   ROOT: ToastCustom,
   TITLE: ToastTitle,
   DESCRIPTION: ToastDescription,
   CLOSE: ToastClose,
 }
+export default Toast

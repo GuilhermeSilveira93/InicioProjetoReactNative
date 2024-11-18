@@ -3,7 +3,7 @@ import { useColorScheme } from 'react-native'
 
 import { styled } from 'styled-components/native'
 
-import  colors  from '@constants/colors'
+import colors from '@constants/colors'
 import { Center as CenterGlue } from '@gluestack-ui/themed'
 type CenterProps = {
   children: React.ReactNode
@@ -17,7 +17,7 @@ const CenterStyled = styled(CenterGlue).attrs<{ $theme: 'dark' | 'light' }>(
     bg: (props.bg || props.backgroundColor) ?? colors[props.$theme].background,
   }),
 )<CenterProps>``
-export const Center = ({ children, ...rest }: CenterProps) => {
+const Center = ({ children, ...rest }: CenterProps) => {
   const theme = useColorScheme() ?? 'dark'
   return (
     <CenterStyled $theme={theme} {...rest}>
@@ -25,3 +25,4 @@ export const Center = ({ children, ...rest }: CenterProps) => {
     </CenterStyled>
   )
 }
+export default Center

@@ -3,7 +3,7 @@ import { useColorScheme } from 'react-native'
 
 import styled from 'styled-components/native'
 
-import  colors  from '@constants/colors'
+import colors from '@constants/colors'
 import { VStack, HStack } from '@gluestack-ui/themed'
 
 type ContainerProps = {
@@ -28,7 +28,7 @@ const StyledVStack = styled(VStack).attrs<{ $theme: 'dark' | 'light' }>(
   }),
 )``
 
-export const Content = ({ children, horizontal, ...rest }: ContainerProps) => {
+const Content = ({ children, horizontal, ...rest }: ContainerProps) => {
   const colorScheme = useColorScheme() ?? 'dark'
   if (horizontal) {
     return (
@@ -43,3 +43,4 @@ export const Content = ({ children, horizontal, ...rest }: ContainerProps) => {
     </StyledVStack>
   )
 }
+export default Content

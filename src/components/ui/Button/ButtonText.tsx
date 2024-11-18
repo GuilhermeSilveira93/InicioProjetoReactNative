@@ -3,7 +3,8 @@ import { useColorScheme } from 'react-native'
 
 import styled from 'styled-components/native'
 
-import { fontSizeEnum, colors } from '@constants/index'
+import colors from '@/@constants/colors'
+import fontSizeEnum from '@/@constants/FontSizeEnum'
 import { ButtonText as ButtonTextGlue } from '@gluestack-ui/themed'
 
 type ButtonTextProps = {
