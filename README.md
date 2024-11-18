@@ -3,7 +3,7 @@
 <p>usando Expo com ambiente de configurado.</p>
 <hr>
 <h2>Navegação</h2>
-<p>Projeto já configurado com Expo Router V3, também com drawer já instalado, <a href='https://docs.expo.dev/router/advanced/drawer/' target='_blank'>Clique Aqui.</a>.</p>
+<p>Projeto já configurado com Expo Router V4, também com drawer já instalado, <a href='https://docs.expo.dev/router/advanced/drawer/' target='_blank'>Clique Aqui.</a>.</p>
 <p>Deve ir atualizando conforme necessidade do dev.</p>
 <hr>
 <h2>React Hook Forms</h2>

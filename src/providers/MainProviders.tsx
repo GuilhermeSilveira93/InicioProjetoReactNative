@@ -1,7 +1,4 @@
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 import { config } from '@gluestack-ui/config'
 import { GluestackUIProvider } from '@gluestack-ui/themed'
@@ -9,16 +6,8 @@ type MainProvidersProps = {
   children: React.ReactNode
 }
 const MainProviders = ({ children }: MainProvidersProps) => {
-  const insets = useSafeAreaInsets()
   return (
-    <SafeAreaProvider
-      style={{
-        paddingTop: insets.top,
-        paddingBottom: insets.bottom,
-        paddingLeft: insets.left,
-        paddingRight: insets.right,
-      }}
-    >
+    <SafeAreaProvider>
       <GluestackUIProvider config={config}>{children}</GluestackUIProvider>
     </SafeAreaProvider>
   )
