@@ -3,7 +3,7 @@ import { useColorScheme, Dimensions } from 'react-native'
 
 import styled from 'styled-components/native'
 
-import { colors } from '@constants/index'
+import  colors  from '@constants/colors'
 import { Input as InputGlue } from '@gluestack-ui/themed'
 const { height } = Dimensions.get('screen')
 type InputGroupProps = {

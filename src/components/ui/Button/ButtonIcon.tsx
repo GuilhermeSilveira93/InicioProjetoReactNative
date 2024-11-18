@@ -1,6 +1,6 @@
 import { useColorScheme } from 'react-native'
 
-import { colors } from '@constants/index'
+import  colors  from '@constants/colors'
 import { ButtonIcon as ButtonIconGlue } from '@gluestack-ui/themed'
 
 type ButtonIconProps<T = never> = {

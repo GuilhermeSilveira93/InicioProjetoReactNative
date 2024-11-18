@@ -3,7 +3,7 @@ import { useColorScheme } from 'react-native'
 
 import { styled } from 'styled-components/native'
 
-import { colors } from '@/@constants'
+import  colors  from '@constants/colors'
 import { Center as CenterGlue } from '@gluestack-ui/themed'
 type CenterProps = {
   children: React.ReactNode

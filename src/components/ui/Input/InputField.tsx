@@ -4,7 +4,7 @@ import { useColorScheme } from 'react-native'
 
 import styled from 'styled-components/native'
 
-import { colors } from '@constants/index'
+import  colors  from '@constants/colors'
 import { InputField as InputFieldGlue } from '@gluestack-ui/themed'
 
 type InputFieldProps<T extends FieldValues> = ComponentProps<

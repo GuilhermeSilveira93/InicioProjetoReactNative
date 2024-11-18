@@ -8,7 +8,7 @@ import Animated, {
 
 import styled from 'styled-components/native'
 
-import { colors } from '@constants/index'
+import  colors  from '@constants/colors'
 
 const ViewStyled = styled.View<{ $theme: 'dark' | 'light' }>`
   height: 100%;

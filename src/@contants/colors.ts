@@ -1,4 +1,4 @@
-export const colors = {
+const colors = {
   dark: {
     primaria: 'rgb(0, 255, 159)',
     secundaria: '#465DFF',
@@ -26,3 +26,4 @@ export const colors = {
     card: '#d1d1d1',
   },
 } as const
+export default colors

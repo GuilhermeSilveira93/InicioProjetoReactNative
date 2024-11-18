@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
     "strict": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
       "@/*": ["src/*"],
       "@assets/*": ["./assets/*"],
-      "@constants/*":["src/@constants/*"],
-      "@classes/*": ["src/@classes/*"],
-      "@components/*":["src/components/*"],
-      "@actions/*":["src/@actions/*"],
-      "@utils/*":["src/@utils/*"],
-      "@hooks/*":["src/hooks/*"],
+      "@constants/*":["./@constants/*"],
+      "@classes/*": ["./@classes/*"],
+      "@components/*":["./components/*"],
+      "@actions/*":["./@actions/*"],
+      "@utils/*":["./@utils/*"],
+      "@hooks/*":["./hooks/*"],
     }
   },
   "extends": "expo/tsconfig.base",

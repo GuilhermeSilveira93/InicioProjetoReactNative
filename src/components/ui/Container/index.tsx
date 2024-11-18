@@ -3,7 +3,7 @@ import { useColorScheme } from 'react-native'
 
 import styled from 'styled-components/native'
 
-import { colors } from '@constants/colors'
+import  colors  from '@constants/colors'
 import { VStack, HStack } from '@gluestack-ui/themed'
 
 type ContainerProps = {

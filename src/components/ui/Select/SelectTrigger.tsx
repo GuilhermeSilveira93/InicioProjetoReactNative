@@ -4,7 +4,7 @@ import { useColorScheme } from 'react-native'
 import { Icon, P } from '@components/ui'
 import styled from 'styled-components/native'
 
-import { colors } from '@constants/index'
+import  colors  from '@constants/colors'
 import AntDesign from '@expo/vector-icons/AntDesign'
 import { SelectTrigger, SelectInput, SelectIcon } from '@gluestack-ui/themed'
 
