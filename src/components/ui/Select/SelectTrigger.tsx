@@ -1,6 +1,4 @@
 import { ComponentProps } from 'react'
-import { useColorScheme } from 'react-native'
-
 import Icon from '@components/ui/Icon'
 import styled from 'styled-components/native'
 
@@ -15,7 +13,7 @@ const SelectTriggerStyled = styled(SelectTrigger).attrs<{
   $theme: 'dark' | 'light'
 }>((props) => ({
   rounded: props.rounded ?? 8,
-  borderColor: props.borderColor ?? colors[props.$theme].primaria,
+  borderColor: props.borderColor ?? props.theme.colors.primaria,
   size: props.size ?? 'xl',
   h: 53,
 }))``
@@ -26,9 +24,8 @@ export const SelectTriggerCustom = ({
   placeholder,
   ...rest
 }: SelectTriggerCustomProps) => {
-  const colorScheme = useColorScheme() ?? 'dark'
   return (
-    <SelectTriggerStyled $theme={colorScheme} {...rest}>
+    <SelectTriggerStyled {...rest}>
       <SelectInputStyled placeholder={placeholder} />
       <SelectIcon mr={'$3'}>
         <Icon<keyof typeof AntDesign.glyphMap>

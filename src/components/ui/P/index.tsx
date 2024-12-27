@@ -1,17 +1,14 @@
 import { ComponentProps } from 'react'
-import { useColorScheme } from 'react-native'
-
 import styled from 'styled-components/native'
 
-import colors from '@constants/colors'
 import fontSizeEnum from '@constants/FontSizeEnum'
 import { Text } from '@gluestack-ui/themed'
 
-export const StyledP = styled(Text).attrs<{ $theme: 'dark' | 'light' }>(
+export const StyledP = styled(Text).attrs(
   (props) => ({
     fontSize: props.fontSize ?? fontSizeEnum.pequena,
     textAlign: props.textAlign ?? 'left',
-    color: props.color ?? colors[props.$theme]?.text,
+    color: props.color ?? props.theme.colors.text,
   }),
 )<{
   $bold?: boolean
@@ -24,9 +21,8 @@ type PProps = {
   fontSize?: fontSizeEnum
 } & ComponentProps<typeof Text>
 const P = ({ children, $bold, fontSize, ...rest }: PProps) => {
-  const colorScheme = useColorScheme() ?? 'dark'
   return (
-    <StyledP $bold={$bold} $theme={colorScheme} fontSize={fontSize} {...rest}>
+    <StyledP $bold={$bold} fontSize={fontSize} {...rest}>
       {children}
     </StyledP>
   )

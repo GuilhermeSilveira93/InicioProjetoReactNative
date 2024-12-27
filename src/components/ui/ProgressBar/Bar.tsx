@@ -1,4 +1,4 @@
-import { ViewProps, useColorScheme } from 'react-native'
+import { ViewProps } from 'react-native'
 import Animated, {
   FadeInUp,
   useAnimatedStyle,
@@ -8,12 +8,10 @@ import Animated, {
 
 import styled from 'styled-components/native'
 
-import  colors  from '@constants/colors'
-
-const ViewStyled = styled.View<{ $theme: 'dark' | 'light' }>`
+const ViewStyled = styled.View`
   height: 100%;
   border-radius: 5px;
-  background-color: ${(props) => colors[props.$theme].primaria};
+  background-color: ${(props) => props.theme.colors.primaria};
 `
 const ViewAnimated = Animated.createAnimatedComponent(ViewStyled)
 
@@ -21,7 +19,6 @@ type BarProps = {
   value: number
 } & ViewProps
 export const Bar = ({ value, style, ...rest }: BarProps) => {
-  const colorScheme = useColorScheme() ?? 'dark'
   const barWidth = useSharedValue(0)
   barWidth.value = withSpring(value, { mass: 0.4 })
   const animatedStyle = useAnimatedStyle(() => ({
@@ -30,7 +27,6 @@ export const Bar = ({ value, style, ...rest }: BarProps) => {
   return (
     <ViewAnimated
       entering={FadeInUp}
-      $theme={colorScheme}
       style={[style, animatedStyle]}
       {...rest}
     />

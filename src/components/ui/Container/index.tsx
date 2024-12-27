@@ -1,27 +1,25 @@
 import { ComponentProps } from 'react'
-import { useColorScheme } from 'react-native'
 
 import styled from 'styled-components/native'
 
-import colors from '@constants/colors'
 import { VStack, HStack } from '@gluestack-ui/themed'
 
 type ContainerProps = {
   horizontal?: boolean
   children: React.ReactNode
 } & ComponentProps<typeof VStack>
-const StyledHStack = styled(HStack).attrs<{ $theme: 'dark' | 'light' }>(
+const StyledHStack = styled(HStack).attrs(
   (props) => ({
-    bg: props.bg ?? colors[props.$theme].card,
+    bg: props.bg ?? props.theme.colors.card,
     flexWrap: 'wrap',
     p: props.p ?? '$4',
     w: props.w ?? '$full',
     rounded: props.rounded ?? 10,
   }),
 )``
-const StyledVStack = styled(VStack).attrs<{ $theme: 'dark' | 'light' }>(
+const StyledVStack = styled(VStack).attrs(
   (props) => ({
-    bg: props.bg ?? colors[props.$theme].card,
+    bg: props.bg ?? props.theme.colors.card,
     p: props.p ?? '$4',
     w: props.w ?? '$full',
     rounded: props.rounded ?? 10,
@@ -29,16 +27,15 @@ const StyledVStack = styled(VStack).attrs<{ $theme: 'dark' | 'light' }>(
 )``
 
 const Content = ({ children, horizontal, ...rest }: ContainerProps) => {
-  const colorScheme = useColorScheme() ?? 'dark'
   if (horizontal) {
     return (
-      <StyledHStack $theme={colorScheme} {...rest}>
+      <StyledHStack {...rest}>
         {children}
       </StyledHStack>
     )
   }
   return (
-    <StyledVStack $theme={colorScheme} {...rest}>
+    <StyledVStack {...rest}>
       {children}
     </StyledVStack>
   )

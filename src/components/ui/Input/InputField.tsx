@@ -1,6 +1,5 @@
 import { ComponentProps } from 'react'
 import { Control, Controller, FieldValues, Path } from 'react-hook-form'
-import { useColorScheme } from 'react-native'
 
 import styled from 'styled-components/native'
 
@@ -13,17 +12,14 @@ type InputFieldProps<T extends FieldValues> = ComponentProps<
   control: Control<T>
   nameInput: Path<T>
 }
-const InputFieldGlueStyled = styled(InputFieldGlue).attrs<{
-  $theme: 'dark' | 'light'
-}>((props) => ({
-  color: props.color ?? colors[props.$theme].text,
+const InputFieldGlueStyled = styled(InputFieldGlue).attrs((props) => ({
+  color: props.color ?? props.theme.colors.text,
 }))``
 export const InputField = <T extends FieldValues>({
   control,
   nameInput,
   ...rest
 }: InputFieldProps<T>) => {
-  const colorScheme = useColorScheme() ?? 'dark'
   return (
     <Controller
       control={control}
@@ -33,7 +29,6 @@ export const InputField = <T extends FieldValues>({
           <>
             <InputFieldGlueStyled
               onChangeText={onChange}
-              $theme={colorScheme}
               value={value}
               onBlur={onBlur}
               {...rest}

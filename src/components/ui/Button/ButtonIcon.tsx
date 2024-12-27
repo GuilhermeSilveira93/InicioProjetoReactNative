@@ -1,7 +1,5 @@
-import { useColorScheme } from 'react-native'
-
-import colors from '@/@constants/colors'
 import { ButtonIcon as ButtonIconGlue } from '@gluestack-ui/themed'
+import { useTheme } from 'styled-components/native'
 
 type ButtonIconProps<T = never> = {
   icon: React.ElementType
@@ -17,8 +15,8 @@ export const ButtonIcon = <T = never>({
   size = 24,
   ...rest
 }: ButtonIconProps<T>) => {
-  const colorScheme = useColorScheme() ?? 'dark'
-  const iconColor = color ?? colors[colorScheme].icons
+  const { colors } = useTheme()
+  const iconColor = color ?? colors.icons
   return (
     <ButtonIconGlue
       as={() => <Icon name={name} size={size} color={iconColor} />}

@@ -1,6 +1,4 @@
 import { ComponentProps } from 'react'
-import { useColorScheme } from 'react-native'
-
 import styled from 'styled-components/native'
 
 import colors from '@/@constants/colors'
@@ -12,21 +10,19 @@ type ButtonTextProps = {
   $bold?: boolean
 } & ComponentProps<typeof ButtonTextGlue>
 
-const ButtonTextStyled = styled(ButtonTextGlue).attrs<{
-  $theme: 'dark' | 'light'
-}>((props) => ({
+const ButtonTextStyled = styled(ButtonTextGlue).attrs((props) => ({
   fontSize: props.fontSize ?? fontSizeEnum.pequena,
   textAlign: props.textAlign ?? 'left',
-  color: props.color ?? colors[props.$theme].text2,
+  color: props.color ?? props.theme.colors.text2,
 }))<{
   $bold?: boolean
 }>`
   font-family: ${(props) => (props.$bold ? 'Univia-BOLD' : 'Univia-PRO')};
 `
 const ButtonText = ({ children, $bold = false, ...rest }: ButtonTextProps) => {
-  const colorScheme = useColorScheme() ?? 'dark'
+
   return (
-    <ButtonTextStyled $bold={$bold} $theme={colorScheme} {...rest}>
+    <ButtonTextStyled $bold={$bold} {...rest}>
       {children}
     </ButtonTextStyled>
   )

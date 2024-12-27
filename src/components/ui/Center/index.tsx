@@ -1,5 +1,4 @@
 import type { ComponentProps } from 'react'
-import { useColorScheme } from 'react-native'
 
 import { styled } from 'styled-components/native'
 
@@ -10,17 +9,16 @@ type CenterProps = {
   bg?: string
 } & ComponentProps<typeof CenterGlue>
 
-const CenterStyled = styled(CenterGlue).attrs<{ $theme: 'dark' | 'light' }>(
+const CenterStyled = styled(CenterGlue).attrs(
   (props) => ({
     p: props.p ?? '$3',
     flex: props.flex ?? 1,
-    bg: (props.bg || props.backgroundColor) ?? colors[props.$theme].background,
+    bg: (props.bg || props.backgroundColor) ?? props.theme.colors.background,
   }),
 )<CenterProps>``
 const Center = ({ children, ...rest }: CenterProps) => {
-  const theme = useColorScheme() ?? 'dark'
   return (
-    <CenterStyled $theme={theme} {...rest}>
+    <CenterStyled  {...rest}>
       {children}
     </CenterStyled>
   )

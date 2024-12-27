@@ -1,0 +1,31 @@
+const colors = {
+  dark: {
+    primaria: 'rgb(0, 255, 159)',
+    secundaria: '#465DFF',
+    card: '#293541',
+    branco: '#fff',
+    text: '#fff',
+    text2: '#000',
+    navigationHeader: '#293541',
+    navigationBottom: '#293541',
+    icons: '#000',
+    icons2: '#fff',
+    background: '#030712',
+    placeholder: '#e2e2e2',
+  },
+  light: {
+    primaria: '#465DFF',
+    secundaria: 'rgb(0, 255, 159)',
+    card: '#fff',
+    branco: '#fff',
+    text: '#000',
+    text2: '#e2e2e2',
+    navigationHeader: '#fff',
+    navigationBottom: '#fff',
+    icons: '#fff',
+    icons2: '#000',
+    background: '#e2e2e2',
+    placeholder: '#e9e9e233',
+  },
+}
+export default colors
