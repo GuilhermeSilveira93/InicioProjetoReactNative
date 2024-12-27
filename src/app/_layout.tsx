@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react'
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 import './global.css'
 import MainProviders from '@/providers/MainProviders'
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
-import { StatusBar } from 'expo-status-bar'
 
 SplashScreen.preventAutoHideAsync()
 export default function RootLayout() {
@@ -33,10 +31,7 @@ export default function RootLayout() {
 function RootLayoutNav() {
   return (
     <MainProviders>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <StatusBar translucent />
-        <Stack screenOptions={{ headerShown: false }}></Stack>
-      </GestureHandlerRootView>
+      <Stack screenOptions={{ headerShown: false }}></Stack>
     </MainProviders>
   )
 }
