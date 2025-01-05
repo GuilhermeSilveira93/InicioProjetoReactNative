@@ -16,6 +16,7 @@ import {
 } from '@react-navigation/native'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { StatusBar } from 'expo-status-bar'
+import { SQLiteProvider } from 'expo-sqlite'
 
 const queryClient = new QueryClient({})
 type MainProvidersProps = {
@@ -25,6 +26,7 @@ const MainProviders = ({ children }: MainProvidersProps) => {
   useReactQueryDevTools(queryClient)
   const colorScheme = useColorScheme() ?? 'dark'
   return (
+    <SQLiteProvider databaseName={'database.db'}>
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <StyleProvider
         theme={colorScheme === 'dark' ? DarkStyledTheme : LightTheme}
@@ -39,6 +41,7 @@ const MainProviders = ({ children }: MainProvidersProps) => {
         </SafeAreaProvider>
       </StyleProvider>
     </ThemeProvider>
+    </SQLiteProvider>
   )
 }
 export default MainProviders

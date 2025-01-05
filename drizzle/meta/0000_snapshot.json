@@ -1,0 +1,85 @@
+{
+  "version": "6",
+  "dialect": "sqlite",
+  "id": "c825344e-0b95-4749-acf6-e0ec34ca0d73",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "ST_DISPOSITIVO": {
+      "name": "ST_DISPOSITIVO",
+      "columns": {
+        "ID_DISPOSITIVO": {
+          "name": "ID_DISPOSITIVO",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "S_UUID": {
+          "name": "S_UUID",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "S_NOME": {
+          "name": "S_NOME",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "S_DESCRICAO": {
+          "name": "S_DESCRICAO",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "S_CODIGO": {
+          "name": "S_CODIGO",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "S_STATUS": {
+          "name": "S_STATUS",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "ST_DISPOSITIVO_S_UUID_unique": {
+          "name": "ST_DISPOSITIVO_S_UUID_unique",
+          "columns": [
+            "S_UUID"
+          ],
+          "isUnique": true
+        },
+        "ST_DISPOSITIVO_S_CODIGO_unique": {
+          "name": "ST_DISPOSITIVO_S_CODIGO_unique",
+          "columns": [
+            "S_CODIGO"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    }
+  },
+  "views": {},
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "indexes": {}
+  }
+}
