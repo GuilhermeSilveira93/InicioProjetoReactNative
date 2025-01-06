@@ -1,7 +1,7 @@
 import { sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 export const ST_DISPOSITIVO = sqliteTable('ST_DISPOSITIVO', {
-  ID_DISPOSITIVO: text('ID_DISPOSITIVO').primaryKey(),
+  ID_DISPOSITIVO: text('ID_DISPOSITIVO').primaryKey({ autoIncrement: true }),
   S_UUID: text('S_UUID').notNull().unique(),
   S_NOME: text('S_NOME'),
   S_DESCRICAO: text('S_DESCRICAO'),

@@ -4,7 +4,7 @@ import Center from '@components/ui/Center'
 import P from '@components/ui/P'
 import { useSQLiteContext } from 'expo-sqlite'
 import { drizzle } from 'drizzle-orm/expo-sqlite'
-import * as DeviceSchema from '@/@database/schemas/product.schema'
+import * as DeviceSchema from '@/@database/schemas/ST_DISPOSITIVO.schema'
 
 export const Home = () => {
   const database = useSQLiteContext()
