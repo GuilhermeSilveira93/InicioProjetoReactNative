@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 
-import './global.css'
 import MainProviders from '@/providers/MainProviders'
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
