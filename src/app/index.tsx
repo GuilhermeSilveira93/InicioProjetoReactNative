@@ -8,7 +8,7 @@ import * as DeviceSchema from '@/@database/schemas/ST_DISPOSITIVO.schema'
 
 export const Home = () => {
   const database = useSQLiteContext()
-  const db = drizzle(database, {schema: DeviceSchema})
+  const db = drizzle(database, {schema: [DeviceSchema]})
   const fetchDevices = async () => {
     const response = await db.query.ST_DISPOSITIVO.findMany()
     console.log(response)
