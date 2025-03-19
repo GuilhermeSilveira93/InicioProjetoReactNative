@@ -9,9 +9,9 @@ import Animated, {
 import styled from 'styled-components/native'
 
 const ViewStyled = styled.View`
-  height: 100%;
-  border-radius: 5px;
-  background-color: ${(props) => props.theme.colors.primaria};
+    height: 100%;
+    border-radius: 5px;
+    background-color: ${(props) => props.theme.colors.primary};
 `
 const ViewAnimated = Animated.createAnimatedComponent(ViewStyled)
 

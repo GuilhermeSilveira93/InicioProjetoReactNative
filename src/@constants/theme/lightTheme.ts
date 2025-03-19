@@ -1,9 +1,8 @@
-import { DefaultTheme } from '@react-navigation/native'
 
-export const LightTheme: DefaultTheme = {
+export const LightTheme = {
   colors: {
-    primaria: '#465DFF',
-    secundaria: 'rgb(0, 255, 159)',
+    primary: '#465DFF',
+    secondary: 'rgb(0, 255, 159)',
     card: '#fff',
     branco: '#fff',
     text: '#000',

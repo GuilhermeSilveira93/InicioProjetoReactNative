@@ -1,7 +1,7 @@
 export const DarkTheme = {
   colors: {
-    primaria: 'rgb(0, 255, 159)',
-    secundaria: '#465DFF',
+    primary: 'rgb(0, 255, 159)',
+    secondary: '#465DFF',
     card: '#293541',
     branco: '#fff',
     text: '#fff',
@@ -13,5 +13,5 @@ export const DarkTheme = {
     background: '#030712',
     placeholder: '#e2e2e2',
   },
-} as const
+}
 export type ThemeType = typeof DarkTheme

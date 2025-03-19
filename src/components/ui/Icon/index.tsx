@@ -1,23 +1,12 @@
-import { Pressable, PressableProps } from 'react-native'
+import { ButtonProps } from '@react-types/button'
 
-type IconProps<T = never> = {
+type IconProps = {
   icon: React.ElementType
-  name: T
   size?: number
-  color: string
-} & PressableProps
-// eslint-disable-next-line prettier/prettier
-const Icon = <T = never>({
-  icon: Icon,
-  name,
-  color,
-  size = 24,
-  ...rest
-}: IconProps<T>) => {
-  return (
-    <Pressable {...rest}>
-      <Icon name={name} size={size} color={color} />
-    </Pressable>
-  )
+  color?: string
+} & ButtonProps
+
+const Icon = ({ icon: Icon, color, size = 24, ...rest }: IconProps) => {
+  return <Icon width={size} height={size} color={color} {...rest} />
 }
 export default Icon
