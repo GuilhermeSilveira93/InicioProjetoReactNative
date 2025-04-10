@@ -4,7 +4,7 @@ import medidasComPorcentagem from '@components/ui/medidasComPorcentagem.function
 import paddingProcessFunction from '@components/ui/PaddingProcess.function'
 import styled from 'styled-components/native'
 
-import uiviewpropsType from '@ts/ui/uiviewprops.type'
+import uiviewpropsType from '@ts/ui/UiViewProps.type'
 
 const StyledCardTitle = styled.View.attrs((props) => ({}))<
   uiviewpropsType & { horizontal?: boolean }

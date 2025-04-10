@@ -1,30 +1,33 @@
-import { ComponentProps } from 'react'
-import { Dimensions } from 'react-native'
+import { TouchableOpacityProps } from 'react-native'
 
+import medidasComPorcentagemFunction from '@components/ui/medidasComPorcentagem.function'
+import PaddingProcessFunction from '@components/ui/PaddingProcess.function'
 import styled from 'styled-components/native'
-import variant from '@constants/Variants'
-import { Button as ButtonGlue } from '@gluestack-ui/themed'
-const { height } = Dimensions.get('screen')
 
-type ButtonProps = {
+import UiTouchableOpacityProps from '@ts/ui/UiTouchableOpacityProps.type'
+
+type CustomButtonProps = {
   children: React.ReactNode
   type?: 'error' | 'success' | 'info' | 'warning' | 'attention'
-} & ComponentProps<typeof ButtonGlue>
-const ButtonStyled = styled(ButtonGlue).attrs(
-  (props) => ({
-    gap: props.gap ?? '$3',
-    p: (props.p ?? height <= 384) ? '$2' : '$3',
-    px: props.px ?? '$3',
-    height: 'auto',
-    bg: props.bg ?? props.theme.colors.primaria,
-    rounded: props.rounded ?? 8,
-  }),
-)``
-const Button = ({ children, type, ...rest }: ButtonProps) => {
-  return (
-    <ButtonStyled {...variant[type!]} {...rest}>
-      {children}
-    </ButtonStyled>
-  )
+} & TouchableOpacityProps &
+  UiTouchableOpacityProps
+const ButtonStyled = styled.TouchableOpacity.attrs(
+  (props) => ({})
+)<UiTouchableOpacityProps>`
+  background-color: ${(props) => props.bg || (props.theme.mode === 'dark' ? props.theme.colors.primary : props.theme.colors.secondary)};
+  justify-content: ${(props) => props.justifyContent || 'center'};
+  width: ${(props) => medidasComPorcentagemFunction(props.w)};
+  height: ${(props) => medidasComPorcentagemFunction(props.h)};
+  position: ${(props) => props.position || 'static'};
+  border-radius: ${(props) =>
+    props.rounded ? medidasComPorcentagemFunction(props.rounded) : '12px'};
+  padding: ${(props) => PaddingProcessFunction(props.p)};
+  top: ${(props) => props.top + 'px'};
+  left: ${(props) => props.left + 'px'};
+  right: ${(props) => props.right + 'px'};
+  bottom: ${(props) => props.bottom + 'px'};
+`
+const Button = ({ children, type, ...rest }: CustomButtonProps) => {
+  return <ButtonStyled {...rest}>{children}</ButtonStyled>
 }
 export default Button

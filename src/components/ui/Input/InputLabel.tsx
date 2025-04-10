@@ -2,13 +2,15 @@ import { ComponentProps } from 'react'
 
 import P from '@components/ui/P'
 
-export const InputLabel = ({
-  children,
-  color = '#ccc',
-  ...rest
-}: ComponentProps<typeof P>) => {
+import EFontSizeEnum from '@ct/EFontSizeEnum'
+
+type InputLabelProps = {
+  children: React.ReactNode
+} & ComponentProps<typeof P>
+
+export const InputLabel = ({ children, ...rest }: InputLabelProps) => {
   return (
-    <P color={color} {...rest}>
+    <P fontSize={rest.fontSize || EFontSizeEnum.pequena} {...rest}>
       {children}
     </P>
   )

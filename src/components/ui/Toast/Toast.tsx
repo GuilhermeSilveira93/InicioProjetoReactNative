@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react'
 import { Dimensions } from 'react-native'
 
-import { variant } from '@/@constants'
+import variant from '@ct/Variants'
 import { Toast as ToastGlue, VStack } from '@gluestack-ui/themed'
 
 const { height } = Dimensions.get('screen')

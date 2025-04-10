@@ -2,7 +2,7 @@ import { Dimensions } from 'react-native'
 
 import styled from 'styled-components/native'
 
-import fontSizeEnum from '@constants/FontSizeEnum'
+import fontSizeEnum from '@ct/EFontSizeEnum'
 import { ToastTitle as ToastTitleGlue } from '@gluestack-ui/themed'
 
 const { height } = Dimensions.get('screen')

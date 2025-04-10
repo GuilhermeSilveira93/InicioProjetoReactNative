@@ -1,14 +1,21 @@
-import { TextProps } from 'react-native'
+import { ComponentProps } from 'react'
 
-import styled from 'styled-components/native'
+import P from '@components/ui/P'
 
-const ErrorStyled = styled.Text`
-  color: #ff0000;
-  font-family: 'Univia-BOLD';
-  font-size: 18px;
-`
+import EFontSizeEnum from '@ct/EFontSizeEnum'
 
-export const InputError = ({ children, ...rest }: TextProps) => {
-  if (!children) return null
-  return <ErrorStyled {...rest}>{children}</ErrorStyled>
+type InputLabelProps = {
+  children: React.ReactNode
+} & ComponentProps<typeof P>
+
+export const InputError = ({ children, ...rest }: InputLabelProps) => {
+  return (
+    <P
+      color={'red'}
+      fontSize={rest.fontSize || EFontSizeEnum.pequena}
+      {...rest}
+    >
+      {children}
+    </P>
+  )
 }

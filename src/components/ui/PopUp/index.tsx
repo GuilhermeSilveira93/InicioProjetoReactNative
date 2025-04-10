@@ -8,7 +8,7 @@ import Settings from '@assets/svgs/Settings.svg'
 import { useToggle } from '@hooks/useToggle'
 
 const ConfigContent = lazy(
-  () => import('@components/drawerFabrica/ConfigContent'),
+  () => import('@components/drawerFabrica/ConfigContent')
 )
 
 interface PopUpProps extends ViewProps {
@@ -47,7 +47,7 @@ const PopUp = ({
             width,
             height,
           }
-        },
+        }
       )
     }
   }, [])

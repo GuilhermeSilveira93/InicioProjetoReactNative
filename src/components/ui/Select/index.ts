@@ -1,14 +1,14 @@
 import { InputError } from '../Input/InputError'
-import { SelectROOT } from './Select'
-import { SelectContent } from './SelectContent'
-import { SelectLabel } from './SelectLabel'
-import { SelectTriggerCustom } from './SelectTrigger'
+import { InputLabel } from '../Input/InputLabel'
+import SelectedROOT from './Selected'
+import SelectedGROUP from './SelectedGroup'
+import SelectedTrigger from './SelectedTrigger'
 
 const Select = {
-  ROOT: SelectROOT,
-  TRIGGER: SelectTriggerCustom,
-  CONTENT: SelectContent,
-  LABEL: SelectLabel,
+  ROOT: SelectedROOT,
+  GROUP: SelectedGROUP,
+  LABEL: InputLabel,
+  TRIGGER: SelectedTrigger,
   ERROR: InputError,
 }
 export default Select

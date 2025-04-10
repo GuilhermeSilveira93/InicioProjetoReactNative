@@ -1,30 +1,14 @@
 import { ComponentProps } from 'react'
-import styled from 'styled-components/native'
 
-import colors from '@/@constants/colors'
-import fontSizeEnum from '@/@constants/FontSizeEnum'
-import { ButtonText as ButtonTextGlue } from '@gluestack-ui/themed'
+import P from '@components/ui/P'
+import { useTheme } from 'styled-components/native'
 
-type ButtonTextProps = {
-  children: string
-  $bold?: boolean
-} & ComponentProps<typeof ButtonTextGlue>
-
-const ButtonTextStyled = styled(ButtonTextGlue).attrs((props) => ({
-  fontSize: props.fontSize ?? fontSizeEnum.pequena,
-  textAlign: props.textAlign ?? 'left',
-  color: props.color ?? props.theme.colors.text2,
-}))<{
-  $bold?: boolean
-}>`
-  font-family: ${(props) => (props.$bold ? 'Univia-BOLD' : 'Univia-PRO')};
-`
-const ButtonText = ({ children, $bold = false, ...rest }: ButtonTextProps) => {
-
+const ButtonText = ({ children, ...rest }: ComponentProps<typeof P>) => {
+  const { colors } = useTheme()
   return (
-    <ButtonTextStyled $bold={$bold} {...rest}>
+    <P color={colors.primaryforeground} flex={1} textAlign={'center'} {...rest}>
       {children}
-    </ButtonTextStyled>
+    </P>
   )
 }
 export default ButtonText

@@ -4,7 +4,7 @@ import medidasComPorcentagem from '@components/ui/medidasComPorcentagem.function
 import paddingProcessFunction from '@components/ui/PaddingProcess.function'
 import styled from 'styled-components/native'
 
-import uiviewpropsType from '@ts/ui/uiviewprops.type'
+import uiviewpropsType from '@ts/ui/UiViewProps.type'
 
 const StyledCardRoot = styled.View.attrs((props) => ({}))<
   uiviewpropsType & { horizontal?: boolean }
@@ -16,11 +16,13 @@ const StyledCardRoot = styled.View.attrs((props) => ({}))<
   flex-direction: ${(props) => (props.horizontal ? 'row' : 'column')};
   padding: ${(props) => paddingProcessFunction(props.p)};
   width: ${(props) => medidasComPorcentagem(props.w)};
+  height: ${(props) => medidasComPorcentagem(props.h)};
   min-width: ${(props) => medidasComPorcentagem(props.minWidth)};
   max-width: ${(props) => medidasComPorcentagem(props.maxWidth)};
   min-height: ${(props) => medidasComPorcentagem(props.minHeight)};
   max-height: ${(props) => medidasComPorcentagem(props.maxHeight)};
   justify-content: ${(props) => props.justifyContent ?? 'center'};
+  align-content: ${(props) => props.alignContent ?? 'start'};
   overflow: ${(props) => props.overflow ?? undefined};
   gap: ${(props) =>
     props.gap !== null && props.gap !== undefined

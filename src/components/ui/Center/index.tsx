@@ -3,10 +3,10 @@ import { ViewProps, View } from 'react-native'
 
 import medidasComPorcentagem from '@components/ui/medidasComPorcentagem.function'
 import paddingProcess from '@components/ui/PaddingProcess.function'
-import { styled } from 'styled-components/native'
+import styled from 'styled-components/native'
 
-import UiProps from '@ts/ui/uiviewprops.type'
-type CenterProps = UiProps & ViewProps
+import uiviewpropsType from '@ts/ui/UiViewProps.type'
+type CenterProps = uiviewpropsType & ViewProps
 
 const StyledView = styled.View.attrs((props) => ({}))<CenterProps>`
   padding: ${(props) => paddingProcess(props.p)};
@@ -19,12 +19,12 @@ const StyledView = styled.View.attrs((props) => ({}))<CenterProps>`
   position: ${(props) => props.position || 'unset'};
   flex: ${(props) => props.flex ?? 1};
   flex-wrap: ${(props) => props.flexWrap ?? 'nowrap'};
-  justify-content: ${(props) => props.justifyContent ?? 'center'};
   gap: ${(props) =>
     props.gap !== null && props.gap !== undefined
       ? props.gap * 4 + 'px'
       : '8px'};
   z-index: ${(props) => props.zIndex ?? '-1'};
+  justify-content: ${(props) => props.justifyContent ?? 'center'};
   align-items: ${(props) => props.alignItems ?? 'center'};
 `
 const Center = React.forwardRef<View, CenterProps>((props, ref) => {

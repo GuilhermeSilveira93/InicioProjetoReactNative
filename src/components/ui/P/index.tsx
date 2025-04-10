@@ -1,25 +1,25 @@
-import { ComponentProps } from 'react'
+import { TextProps } from 'react-native'
+
 import styled from 'styled-components/native'
 
-import fontSizeEnum from '@constants/FontSizeEnum'
-import { Text } from '@gluestack-ui/themed'
+import fontSizeEnum from '@ct/EFontSizeEnum'
+import EFontSizeEnum from '@ct/EFontSizeEnum'
+import UiTextProps from '@ts/ui/UiTextProps.type'
 
-export const StyledP = styled(Text).attrs(
-  (props) => ({
-    fontSize: props.fontSize ?? fontSizeEnum.pequena,
-    textAlign: props.textAlign ?? 'left',
-    color: props.color ?? props.theme.colors.text,
-  }),
-)<{
-  $bold?: boolean
-}>`
+export const StyledP = styled.Text.attrs((props) => ({}))<UiTextProps>`
   font-family: ${(props) => (props.$bold ? 'Univia-BOLD' : 'Univia-PRO')};
+  color: ${(props) => props.color || props.theme.colors.text};
+  font-size: ${(props) =>
+    props.fontSize ? props.fontSize + 'px' : EFontSizeEnum.base + 'px'};
+  flex: ${(props) => props.flex || 'none'};
+  text-align: ${(props) => props.textAlign};
 `
 type PProps = {
   children: React.ReactNode
   $bold?: boolean
   fontSize?: fontSizeEnum
-} & ComponentProps<typeof Text>
+} & UiTextProps &
+  TextProps
 const P = ({ children, $bold, fontSize, ...rest }: PProps) => {
   return (
     <StyledP $bold={$bold} fontSize={fontSize} {...rest}>
