@@ -1,5 +1,6 @@
 export type UiInputProps = {
-  type?: 'text' | 'password'
+  type?: 'text' | 'password' | 'number'
+  flex?: number
   p?: number | number[]
   bg?: string
   minWidth?: number | 'full' | string

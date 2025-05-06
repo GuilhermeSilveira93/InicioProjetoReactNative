@@ -1,36 +1,32 @@
-import React, { useEffect } from 'react'
+import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { useFonts } from 'expo-font';
+import { Stack } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import 'react-native-reanimated';
+import {useColorScheme} from "react-native";
 
-import MainProviders from '@/providers/MainProviders'
-import { useFonts } from 'expo-font'
-import { SplashScreen, Stack } from 'expo-router'
 
-SplashScreen.preventAutoHideAsync()
 export default function RootLayout() {
-  const [loaded, error] = useFonts({
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    'Univia-PRO': require('./../../assets/fonts/UniviaPro-Regular.ttf'),
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    'Univia-BOLD': require('./../../assets/fonts/UniviaPro-Bold.ttf'),
-  })
-  useEffect(() => {
-    if (error) throw error
-  }, [error])
-
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync()
-    }
-  }, [loaded])
+  const colorScheme = useColorScheme();
+  const [loaded] = useFonts({
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      'Univia-PRO': require('./../../assets/fonts/UniviaPro-Regular.ttf'),
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      'Univia-BOLD': require('./../../assets/fonts/UniviaPro-Bold.ttf'),
+  });
 
   if (!loaded) {
-    return null
+    // Async font loading only occurs in development.
+    return null;
   }
-  return <RootLayoutNav />
-}
-function RootLayoutNav() {
+
   return (
-    <MainProviders>
-      <Stack screenOptions={{ headerShown: false }}></Stack>
-    </MainProviders>
-  )
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="+not-found" />
+      </Stack>
+      <StatusBar style="auto" />
+    </ThemeProvider>
+  );
 }

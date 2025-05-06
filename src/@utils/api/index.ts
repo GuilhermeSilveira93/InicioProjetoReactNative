@@ -12,11 +12,3 @@ export const api = axios.create({
     'Access-Control-Allow-Origin': '*',
   },
 })
-
-/* export const dbL = axios.create({
-  baseURL: 'https://secure.softrack.com.br',
-  headers: {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-  },
-}) */

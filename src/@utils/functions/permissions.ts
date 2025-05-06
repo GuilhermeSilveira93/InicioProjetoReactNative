@@ -9,7 +9,7 @@ export const requestPermissions = async () => {
       buttonNeutral: 'Lembrar depois',
       buttonNegative: 'Cancelar',
       buttonPositive: 'OK',
-    },
+    }
   )
   if (grantedFineLocation === PermissionsAndroid.RESULTS.GRANTED) {
     await PermissionsAndroid.request(
@@ -20,7 +20,7 @@ export const requestPermissions = async () => {
         buttonNeutral: 'Lembrar depois',
         buttonNegative: 'Cancelar',
         buttonPositive: 'OK',
-      },
+      }
     )
 
     await PermissionsAndroid.request(
@@ -32,7 +32,7 @@ export const requestPermissions = async () => {
         buttonNeutral: 'Lembrar depois',
         buttonNegative: 'Cancelar',
         buttonPositive: 'OK',
-      },
+      }
     )
 
     await PermissionsAndroid.request(
@@ -44,7 +44,7 @@ export const requestPermissions = async () => {
         buttonNeutral: 'Lembrar depois',
         buttonNegative: 'Cancelar',
         buttonPositive: 'OK',
-      },
+      }
     )
 
     await PermissionsAndroid.request(
@@ -55,12 +55,12 @@ export const requestPermissions = async () => {
         buttonNeutral: 'Lembrar depois',
         buttonNegative: 'Cancelar',
         buttonPositive: 'OK',
-      },
+      }
     )
   } else {
     Alert.alert(
       'Atenção',
-      'Permissão de localização necessária para o Bluetooth não concedida',
+      'Permissão de localização necessária para o Bluetooth não concedida'
     )
   }
 }

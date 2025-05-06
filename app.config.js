@@ -1,28 +1,27 @@
-const clientName = process.env.EXPO_PUBLIC_CLIENT?.toLowerCase() || 'Generico-Expo'
+const clientName = process.env.EXPO_PUBLIC_CLIENT || 'operadoresmeli'
+const title = process.env.EXPO_PUBLIC_TITLE || 'Operadores Meli'
+const packagename = process.env.EXPO_PUBLIC_PACKAGE || 'Operadores-Meli'
 export default {
   expo: {
-    name: clientName,
+    name: title,
     slug: clientName,
-    scheme: 'genericoexpo',
+    scheme: clientName,
     version: '1.0.0',
     orientation: 'default',
     icon: './assets/icon.png',
     userInterfaceStyle: 'automatic',
     newArchEnabled: true,
     ios: {
-      supportsTablet: true,
-      bundleIdentifier: `br.com.${clientName}`,
+      supportsTablet: true
     },
     android: {
-      gradleVersion: '8.13',
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',
         backgroundColor: '#0d0d0d',
       },
-      package: `br.com.${clientName}`,
-      googleServicesFile: `./google-services-${clientName}.json`,
+      edgeToEdgeEnabled: true,
+      package: packagename
     },
-    assetBundlePatterns: ['**/*'],
     web: {
       bundler: 'metro',
       output: 'static',
@@ -30,17 +29,7 @@ export default {
     },
     plugins: [
       'expo-router',
-      [
-        'expo-build-properties',
-        {
-          android: {
-            compileSdkVersion: 35,
-            targetSdkVersion: 35,
-            buildToolsVersion: '35.0.0',
-            version: clientName === 'softrack' ? 12 : 1,
-          },
-        },
-      ],
+      "expo-localization",
       [
         'expo-splash-screen',
         {
@@ -54,10 +43,9 @@ export default {
           },
         },
       ],
-      'expo-asset',
     ],
     experiments: {
-      typedRoutes: true,
-    },
-  },
+      typedRoutes: true
+    }
+  }
 }

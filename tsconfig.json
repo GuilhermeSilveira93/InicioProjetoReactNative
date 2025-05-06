@@ -1,28 +1,24 @@
 {
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "target": "es6",
-    "module": "CommonJS",
     "strict": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@assets/*": ["./assets/*"],
-      "@constants/*":["./src/@constants/*"],
+      "@ct/*":["./src/@constants/*"],
       "@ts/*":["./src/@types/*"],
       "@classes/*": ["./src/@classes/*"],
       "@components/*":["./src/components/*"],
       "@functions/*":["./src/@functions/*"],
       "@actions/*":["./src/@actions/*"],
       "@utils/*":["./src/@utils/*"],
-      "@hooks/*":["./src/hooks/*"],
+      "@hooks/*":["./src/@hooks/*"],
       "@providers/*":["./src/providers/*"]
     }
   },
-  "extends": "expo/tsconfig.base",
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "src/app/_Layout.js",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
   ]
