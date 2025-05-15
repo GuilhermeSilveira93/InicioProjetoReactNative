@@ -1,5 +1,5 @@
 import { OperadorType } from '@ts/Operador.type'
-import isValidOperador from '@utils/functions/isValidOperator'
+import isValidOperador from '@/src/lib/functions/isValidOperator'
 
 describe('teste função isValidOperador', () => {
   it('deve retornar true para um objeto válido', () => {

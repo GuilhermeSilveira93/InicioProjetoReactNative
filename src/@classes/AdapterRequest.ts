@@ -1,5 +1,6 @@
-import { api } from '@utils/api'
+import { api } from '@/src/lib/api'
 import { AxiosError, AxiosResponse, ResponseType } from 'axios'
+
 type HttpRequest = {
   url: string
   method: 'get' | 'post' | 'put' | 'delete' | 'patch'

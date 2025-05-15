@@ -2,18 +2,45 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@assets/*": ["./assets/*"],
-      "@ct/*":["./src/@constants/*"],
-      "@ts/*":["./src/@types/*"],
-      "@classes/*": ["./src/@classes/*"],
-      "@components/*":["./src/components/*"],
-      "@functions/*":["./src/@functions/*"],
-      "@actions/*":["./src/@actions/*"],
-      "@utils/*":["./src/@utils/*"],
-      "@hooks/*":["./src/@hooks/*"],
-      "@providers/*":["./src/providers/*"]
+      "@/*": [
+        "./*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@ct/*": [
+        "./src/@constants/*"
+      ],
+      "@ts/*": [
+        "./src/@types/*"
+      ],
+      "@classes/*": [
+        "./src/@classes/*"
+      ],
+      "@components/*": [
+        "./src/@components/*"
+      ],
+      "@functions/*": [
+        "./src/@functions/*"
+      ],
+      "@actions/*": [
+        "./src/@actions/*"
+      ],
+      "@utils/*": [
+        "./src/@utils/*"
+      ],
+      "@hooks/*": [
+        "./src/@hooks/*"
+      ],
+      "@providers/*": [
+        "./src/@providers/*"
+      ],
+      "sftk_firebase/native": [
+        "node_modules/sftk_firebase/dist/native/index.d.ts",
+        "node_modules/sftk_firebase/dist/native/index.js"
+      ]
     }
   },
   "include": [

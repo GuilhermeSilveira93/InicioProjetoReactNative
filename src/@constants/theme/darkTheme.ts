@@ -1,8 +1,13 @@
-export const DarkTheme = {
+import { DefaultTheme } from 'styled-components/native'
+
+export const DarkTheme: DefaultTheme = {
+  mode: 'dark',
   colors: {
-    primary: 'rgb(0, 255, 159)',
-    secondary: '#465DFF',
+    primaria: 'rgb(0, 255, 159)',
+    primariaforeground: '#000000',
+    secundaria: '#465DFF',
     card: '#293541',
+    cardForeground: '#ccc',
     branco: '#fff',
     text: '#fff',
     text2: '#000',
@@ -10,8 +15,10 @@ export const DarkTheme = {
     navigationBottom: '#293541',
     icons: '#000',
     icons2: '#fff',
+    border: 'rgb(0, 255, 159)',
+    error: 'red',
     background: '#030712',
-    placeholder: '#e2e2e2',
+    backgroundSmooth: '#171717',
+    placeholder: '#4d4d4d',
   },
 }
-export type ThemeType = typeof DarkTheme

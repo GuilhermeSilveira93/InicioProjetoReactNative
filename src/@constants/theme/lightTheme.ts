@@ -1,8 +1,13 @@
-export const LightTheme = {
+import { DefaultTheme } from 'styled-components/native'
+
+export const LightTheme: DefaultTheme = {
+  mode: 'light',
   colors: {
-    primary: '#465DFF',
-    secondary: 'rgb(0, 255, 159)',
+    primaria: '#465DFF',
+    primariaforeground: '#fff',
+    secundaria: 'rgb(0, 255, 159)',
     card: '#fff',
+    cardForeground: '#ccc',
     branco: '#fff',
     text: '#000',
     text2: '#e2e2e2',
@@ -10,7 +15,10 @@ export const LightTheme = {
     navigationBottom: '#fff',
     icons: '#fff',
     icons2: '#000',
+    border: '#465DFF',
+    error: 'red',
     background: '#e2e2e2',
+    backgroundSmooth: '#949494',
     placeholder: '#e9e9e233',
   },
 }

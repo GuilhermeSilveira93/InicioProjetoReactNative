@@ -30,6 +30,7 @@ export default {
     plugins: [
       'expo-router',
       "expo-localization",
+      ["@react-native-google-signin/google-signin"],
       [
         'expo-splash-screen',
         {
