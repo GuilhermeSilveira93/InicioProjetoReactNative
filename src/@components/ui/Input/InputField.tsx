@@ -2,10 +2,9 @@ import { Control, Controller, FieldErrors, FieldValues, Path } from 'react-hook-
 import { TextInputProps } from 'react-native'
 
 import medidasComPorcentagemFunction from '@components/ui/medidasComPorcentagem.function'
-import styled from 'styled-components/native'
+import styled, { DefaultTheme } from 'styled-components/native'
 
 import { UiInputProps } from '@ts/ui/UiInputProps.type'
-import { ThemeType } from '@ct/theme/darkTheme'
 
 type InputFieldProps<T extends FieldValues> = {
   control?: Control<T>
@@ -21,7 +20,7 @@ type UiInputPropsWithType = Omit<TextInputProps, 'type'> & {
 }
 
 const InputFieldStyled = styled.TextInput.attrs(
-  (props: UiInputPropsWithType & {theme: ThemeType}) => ({
+  (props: UiInputPropsWithType & {theme: DefaultTheme}) => ({
     placeholderTextColor: props.theme.colors.placeholder,
     secureTextEntry: props.type === 'password',
     autoComplete: 'off',

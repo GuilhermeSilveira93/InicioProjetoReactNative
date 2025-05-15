@@ -1,19 +1,19 @@
-import { LoginSchema, LoginSchemaType } from '../../../@schemas/Login.schema'
+import { LoginSenhaSchema, LoginSenhaSchemaType } from '@schemas/LoginSenha.schema'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-export const useFormLogin = () => {
+export const useFormLoginSenha = () => {
 
-  const form = useForm<LoginSchemaType>({
+  const form = useForm<LoginSenhaSchemaType>({
     defaultValues: {
       S_LOGIN: '',
       S_SENHA: ''
     },
-    resolver: zodResolver(LoginSchema)
+    resolver: zodResolver(LoginSenhaSchema)
   })
 
 
-  const signInWithLoginAndPassword = async (data: LoginSchemaType) => {
+  const signInWithLoginAndPassword = async (data: LoginSenhaSchemaType) => {
 
   }
 

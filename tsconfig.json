@@ -10,6 +10,9 @@
       "@assets/*": [
         "./assets/*"
       ],
+      "@schemas/*": [
+        "./src/@schemas/*"
+      ],
       "@ct/*": [
         "./src/@constants/*"
       ],
@@ -33,6 +36,9 @@
       ],
       "@hooks/*": [
         "./src/@hooks/*"
+      ],
+      "@reducers/*": [
+        "./src/@reducers/*"
       ],
       "@providers/*": [
         "./src/@providers/*"

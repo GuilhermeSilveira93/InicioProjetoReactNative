@@ -1,8 +1,7 @@
 import React from 'react'
+import { ButtonProps } from 'react-native'
 
 import { useTheme } from 'styled-components/native'
-
-import { ButtonProps } from '@react-types/button'
 
 type IconProps = {
   icon: React.ElementType

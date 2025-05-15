@@ -1,16 +1,17 @@
 import { createContext, useContextSelector } from 'use-context-selector'
 import { useFirebaseInstance } from '@providers/FirebaseInstanceProvider'
-import { useEffect, useState } from 'react'
-import { Image } from 'expo-image'
+import { useCallback, useEffect, useReducer, useState } from 'react'
 // @ts-ignore
 import { GoogleSignin } from '@react-native-google-signin/google-signin'
 import { FireBaseAuthentication } from 'sftk_firebase/native'
 import { Platform, ToastAndroid } from 'react-native'
 import { env } from '@ts/env'
+import { Company, SessionType, Unit, User } from '@ts/user.type'
+import { SetSession } from '@reducers/session'
+import { LocalStorage } from '@classes/LocalStorage'
 
 interface ISessionContext {
   user: any
-  loading: boolean
   signInWithGoogle: () => Promise<void>
   FirebaseAuthInstance: FireBaseAuthentication
 }
@@ -18,8 +19,18 @@ interface ISessionContext {
 const SessionContext = createContext<ISessionContext | null>(null)
 
 export default function SessionProvider({ children }: { children: React.ReactNode }) {
+  const [Session, setSession] = useReducer(SetSession, {
+    Authentication: 'no',
+    RememberSession: false,
+    SignInGoogle: false,
+    Company: LocalStorage.getItem<Company>('Company'),
+    Unit: LocalStorage.getItem<Unit>('Unit'),
+    User: LocalStorage.getItem<User>('User'),
+  } as SessionType)
   const { FirebaseInstance } = useFirebaseInstance()
   const [FirebaseAuthInstance, setFirebaseAuthInstance] = useState<FireBaseAuthentication>(new FireBaseAuthentication(FirebaseInstance))
+  const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState(FirebaseAuthInstance?.auth.currentUser)
 
   useEffect(() => {
     (async () => {
@@ -29,7 +40,7 @@ export default function SessionProvider({ children }: { children: React.ReactNod
           'https://www.googleapis.com/auth/userinfo.email',
           'https://www.googleapis.com/auth/userinfo.profile',
         ],
-        offlineAccess: true
+        offlineAccess: true,
       })
       if (Platform.OS === 'web') {
         const instance = await FireBaseAuthentication.create(FirebaseInstance)
@@ -38,34 +49,24 @@ export default function SessionProvider({ children }: { children: React.ReactNod
     })()
   }, [])
 
-  const [user, setUser] = useState(FirebaseAuthInstance?.auth.currentUser)
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const unsubscribe = FirebaseAuthInstance.onAuthStateChanged((authUser) => {
       setUser(authUser)
-      setLoading(false)
     })
+    setLoading(false)
     return () => {
       if (unsubscribe) unsubscribe()
     }
   }, [FirebaseAuthInstance])
 
-  if (loading) {
+
+  /*if (loading) {
     return <Image source={require('@assets/splash.png')} style={{ flex: 1 }} contentFit="contain" />
-  }
+  }*/
 
-  const signInWithGoogle = async () => {
-    if (Platform.OS === 'web') {
-      try {
-        const teste = await FirebaseAuthInstance.signInWithPopup()
-        console.log(teste)
-      } catch (error) {
-        console.log('error', error)
-      }
-      return
-    }
 
+  const signInWithGoogle = useCallback(async () => {
     // MANTÉM LÓGICA ANDROID
     try {
       const hasPlayServices = await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true })
@@ -89,15 +90,14 @@ export default function SessionProvider({ children }: { children: React.ReactNod
       console.error('Erro ao fazer login com Google + Firebase:', error)
       ToastAndroid.show('Erro ao tentar logar. Verifique sua conta.', ToastAndroid.LONG)
     }
-  }
+  }, [])
 
   return (
     <SessionContext.Provider
       value={{
         user,
-        loading,
         signInWithGoogle,
-        FirebaseAuthInstance
+        FirebaseAuthInstance,
       }}
     >
       {children}
@@ -107,9 +107,8 @@ export default function SessionProvider({ children }: { children: React.ReactNod
 
 export function useSession() {
   const user = useContextSelector(SessionContext, (contexto) => contexto?.user)
-  const loading = useContextSelector(SessionContext, (contexto) => contexto?.loading)
   const signInWithGoogle = useContextSelector(SessionContext, (contexto) => contexto?.signInWithGoogle)
   const FirebaseAuthInstance = useContextSelector(SessionContext, (contexto) => contexto?.FirebaseAuthInstance)
 
-  return { user, loading, signInWithGoogle, FirebaseAuthInstance }
+  return { user, signInWithGoogle, FirebaseAuthInstance }
 }

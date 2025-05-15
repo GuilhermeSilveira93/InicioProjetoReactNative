@@ -3,6 +3,7 @@ type UiViewProps = {
   flexDirection?: 'column' | 'row' | 'row-reverse' | 'column-reverse'
   alignItems?: 'flex-start' | 'flex-end' | 'center' | 'space-between'
   alignContent?: 'start' | 'space-around' | 'center' | 'space-between'
+  justifyItems?: 'flex-start' | 'flex-end' | 'center'
   p?: number | number[]
   bg?: string
   flex?: number
