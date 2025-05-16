@@ -2,7 +2,7 @@ import React from 'react'
 import { Drawer } from 'expo-router/drawer'
 import { DrawerNavigationOptions } from '@react-navigation/drawer'
 import { DrawerCustomContent } from '@components/DrawerCustomContent'
-import { idioma } from '@/src/lib/Idioma'
+import { idioma } from '@ct/idioma/Idioma'
 import { DefaultTheme } from 'styled-components/native'
 
 export default function TabLayout() {

@@ -43,10 +43,6 @@
       "@providers/*": [
         "./src/@providers/*"
       ],
-      "sftk_firebase/native": [
-        "node_modules/sftk_firebase/dist/native/index.d.ts",
-        "node_modules/sftk_firebase/dist/native/index.js"
-      ]
     }
   },
   "include": [

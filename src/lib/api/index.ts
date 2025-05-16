@@ -1,9 +1,9 @@
 import axios from 'axios'
 export const api = axios.create({
-  baseURL: 'https://secure.softrack.com.br/',
+  baseURL: '',
   proxy: {
     protocol: 'https://',
-    host: 'secure.softrack.com.br',
+    host: 'dominio.com.br',
     port: 443,
   },
   httpsAgent: false,
