@@ -27,7 +27,7 @@ export default function LoginESenhaForm() {
             control={control}
             nameInput={'S_SENHA'}
             type={'password'} />
-          <Input.ICON icon={Entypo} name={'eye'} color={colors.icons2}/>
+          <Input.ICON icon={Entypo} name={'eye'} color={colors.icons2} title={'Entypo'}/>
         </Input.GROUP>
       </Input.ROOT>
       <Button.ROOT w={'full'} onPress={signInWithGoogle} disabled={isSubmitting} p={3}>
